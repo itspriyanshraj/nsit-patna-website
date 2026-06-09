@@ -1,0 +1,108 @@
+.footer {
+  color: var(--light-text-color);
+  background:
+    linear-gradient(135deg, rgba(185, 28, 47, 0.16), transparent),
+    linear-gradient(225deg, rgba(201, 151, 43, 0.12), transparent),
+    var(--heading-color);
+  border-top: 1px solid var(--panel-border-color);
+}
+
+.footerInner,
+.footerBottom {
+  width: min(1320px, calc(100% - 48px));
+}
+
+.footerInner {
+  padding: 0 0 44px;
+}
+
+.ctaPanel {
+  margin-top: -76px;
+  background:
+    linear-gradient(135deg, rgba(185, 28, 47, 0.16), transparent),
+    linear-gradient(225deg, rgba(201, 151, 43, 0.12), transparent),
+    var(--heading-color);
+  border: 1px solid var(--panel-border-color);
+  border-radius: 14px;
+  box-shadow: var(--deep-shadow);
+}
+
+.ctaPanelH2 {
+  max-width: 720px;
+  font-size: clamp(26px, 3vw, 42px);
+  line-height: 1.15;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.75fr 1.05fr 1fr;
+  gap: 34px;
+}
+
+.brandBlock {
+  grid-template-columns: 92px 1fr;
+  gap: 18px;
+}
+
+.footerLogo {
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.26));
+}
+
+.brandText {
+  max-width: 390px;
+  color: var(--muted-light-text-color);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.linkList a:hover,
+.contactList a:hover {
+  color: var(--main-color) !important;
+  transform: translateX(4px);
+}
+
+.mapCard {
+  background: var(--panel-bg-color);
+  border: 1px solid var(--panel-border-color);
+}
+
+.footerBottom {
+  padding: 22px 0 26px;
+  border-top: 1px solid var(--panel-border-color);
+}
+
+.footerBottomText {
+  color: var(--dim-light-text-color);
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .footerInner,
+  .footerBottom {
+    width: min(100% - 32px, 1320px);
+  }
+
+  .footerInner {
+    padding: 0 0 38px;
+  }
+
+  .ctaPanel {
+    margin-top: -66px;
+    padding: 22px !important;
+  }
+
+  .brandBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+  }
+}
