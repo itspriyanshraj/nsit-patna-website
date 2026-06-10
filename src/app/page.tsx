@@ -201,6 +201,7 @@ const telegramLinks = [
     text: "",
     icon: <FaUser />,
     action: true,
+    href: "#",
   },
   {
     title: "Teacher's Login",
@@ -208,6 +209,7 @@ const telegramLinks = [
     icon: <FaBuildingColumns />,
     action: true,
     outline: true,
+    href: "/teacher-login",
   },
 ];
 
@@ -343,9 +345,9 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.telegramGrid}>
-              {telegramLinks.map((link) => (
+                {telegramLinks.map((link) => (
                 <a
-                  href="#"
+                  href={link.href || "#"}
                   className={`${styles.telegramCard} ${link.action ? styles.telegramAction : ""} ${link.outline ? styles.telegramOutline : ""}`}
                   key={link.title}
                 >

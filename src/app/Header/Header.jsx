@@ -89,7 +89,7 @@ export default function Header() {
               <span aria-hidden="true">₹</span>
               Online Payment
             </a>
-            <a href="#" className={styles.loginLink}>
+            <a href="/teacher-login" className={styles.loginLink}>
               <span aria-hidden="true">↗</span>
               Teacher Login
             </a>

@@ -162,6 +162,6 @@ export const navItems = [
   { label: "Press & Media", href: "/press-media" },
   { label: "Feedback", href: "/feedback" },
   { label: "Career", href: "/career" },
-  { label: "Enquiry", href: "/enquiry" },
+
   { label: "Contact", href: "/contact" },
 ];
