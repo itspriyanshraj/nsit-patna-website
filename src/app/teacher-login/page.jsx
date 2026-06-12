@@ -152,7 +152,11 @@ export default function TeacherLoginPage() {
           </button>
         </form>
 
-        <p style={{ textAlign: "center", marginTop: 28, fontSize: 10, color: "#94a3b8" }}>
+        <div style={{ textAlign: "center", marginTop: 24, opacity: 0.4 }}>
+          <img src="/madhubani-bg.png" alt="" style={{ width: 60, height: "auto" }} />
+        </div>
+
+        <p style={{ textAlign: "center", marginTop: 16, fontSize: 10, color: "#94a3b8" }}>
           Powered by <strong style={{ color: "#0f172a" }}>DotPlus Technologies Pvt. Ltd.</strong>
         </p>
       </div>
