@@ -59,13 +59,8 @@ export default function TeacherLoginPage() {
     <section style={{
       minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
       position: "relative",
-      background: "url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80') center/cover no-repeat",
+      background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
     }}>
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "linear-gradient(135deg, rgba(9,18,38,0.85) 0%, rgba(9,18,38,0.5) 100%)",
-      }} />
-
       <div style={{
         position: "relative", zIndex: 1, width: "100%", maxWidth: 420, margin: "0 16px",
         background: "#fff", borderRadius: 14, padding: "44px 36px",
