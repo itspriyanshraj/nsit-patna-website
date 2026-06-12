@@ -163,14 +163,26 @@ export default function TeacherLoginPage() {
       </div>
 
       {/* OTP Modal */}
+      <style>{`
+        @keyframes slideDown {
+          from { transform: translateY(-80px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
       {showOtp && (
         <div onClick={() => setShowOtp(false)} style={{
           position: "fixed", inset: 0, zIndex: 99999, background: "rgba(0,0,0,0.6)",
           display: "flex", alignItems: "center", justifyContent: "center", padding: 16,
+          animation: "fadeIn 200ms ease-out",
         }}>
           <div onClick={(e) => e.stopPropagation()} style={{
             background: "#fff", borderRadius: 16, width: "100%", maxWidth: 400,
             boxShadow: "0 24px 80px rgba(0,0,0,0.35)", overflow: "hidden",
+            animation: "slideDown 300ms ease-out",
           }}>
             <div style={{
               background: accent, padding: "18px 28px",
