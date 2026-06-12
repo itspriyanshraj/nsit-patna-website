@@ -4,8 +4,18 @@ import styles from "./online-payment.module.css";
 
 export default function OnlinePaymentPage() {
   return (
-    <div className={styles.wrapper}>
-      <div className="container-fluid p-0">
+    <div className={styles.wrapper} style={{
+      minHeight: "100vh",
+      backgroundImage: "url('/images/login-bg.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}>
+      <div style={{
+        position: "absolute", inset: 0,
+        background: "rgba(0,0,0,0.65)",
+      }} />
+      <div className="container-fluid p-0" style={{ position: "relative", zIndex: 1 }}>
         <div className="row g-0 min-vh-100">
 
           {/* Left Red Section */}
