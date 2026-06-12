@@ -71,7 +71,6 @@ function DropdownItems({ items, level = 0, onClose }) {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [hideDrop, setHideDrop] = useState(false);
-  const [showPayment, setShowPayment] = useState(false);
   const hoveredRef = useRef(false);
   const scrollingLogos = [...recognitions, ...recognitions];
   const handleClose = () => { setHideDrop(true); setIsOpen(false); };
@@ -86,10 +85,10 @@ export default function Header() {
             <span className={styles.contactPhone}>7781020349, 7781020359, 9102403261</span>
           </div>
           <div className="d-flex align-items-center flex-wrap gap-3" style={{ padding: 12 }}>
-            <button onClick={() => setShowPayment(true)} className={styles.paymentLink} style={{ cursor: "pointer", fontFamily: "inherit" }}>
+            <a href="#" className={styles.paymentLink}>
               <span aria-hidden="true">₹</span>
               Online Payment
-            </button>
+            </a>
             <a href="/teacher-login" className={styles.loginLink}>
               <span aria-hidden="true">↗</span>
               Teacher Login
@@ -189,54 +188,6 @@ export default function Header() {
           </Link>
         </div>
       </nav>
-
-      {showPayment && (
-        <div onClick={() => setShowPayment(false)} style={{
-          position: "fixed", inset: 0, zIndex: 999999, background: "rgba(0,0,0,0.6)",
-          display: "flex", alignItems: "center", justifyContent: "center", padding: 16,
-        }}>
-          <div onClick={(e) => e.stopPropagation()} style={{
-            background: "#fff", borderRadius: 16, width: "100%", maxWidth: 400,
-            boxShadow: "0 24px 80px rgba(0,0,0,0.35)", overflow: "hidden",
-          }}>
-            <div style={{
-              background: "var(--main-color)", padding: "18px 28px",
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-            }}>
-              <h3 style={{ color: "#fff", fontSize: 17, fontWeight: 900, margin: 0 }}>
-                <span style={{ marginRight: 10, fontSize: 18 }}>₹</span>
-                Online Payment
-              </h3>
-              <button onClick={() => setShowPayment(false)} style={{
-                background: "rgba(255,255,255,0.2)", border: "none", color: "#fff",
-                width: 32, height: 32, borderRadius: "50%", cursor: "pointer",
-                fontSize: 16, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center",
-              }}>&times;</button>
-            </div>
-            <div style={{ padding: "28px", textAlign: "center" }}>
-              <p style={{ fontSize: 13, color: "#64748b", marginBottom: 20, lineHeight: 1.6 }}>
-                You are being redirected to the secure NSIT payment gateway for online fee payment.
-              </p>
-              <a href="https://student.nsit.in/login.aspx" target="_blank" rel="noopener noreferrer" style={{
-                display: "inline-block", width: "100%", padding: "14px", background: "var(--main-color)", color: "#fff",
-                border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800, textDecoration: "none",
-                boxShadow: "0 8px 20px rgba(237,28,36,0.3)",
-              }}
-                onMouseEnter={(e) => { e.target.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.target.style.transform = "translateY(0)"; }}
-              >
-                Proceed to Payment
-              </a>
-              <button onClick={() => setShowPayment(false)} style={{
-                display: "block", width: "100%", padding: "12px", background: "none", color: "#64748b",
-                border: "none", borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: "pointer", marginTop: 8,
-              }}>
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
