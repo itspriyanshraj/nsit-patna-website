@@ -10,7 +10,7 @@ export default function OnlinePaymentPage() {
 
           {/* Left Red Section */}
           <div className="col-lg-7 d-none d-lg-flex align-items-center justify-content-center position-relative overflow-hidden" style={{
-            background: "linear-gradient(rgba(180,0,0,0.85), rgba(180,0,0,0.9)), #c70000",
+            background: "linear-gradient(rgba(180,0,0,0.8), rgba(180,0,0,0.85)), url('/images/login-bg.png') center/cover no-repeat",
           }}>
             <div className={styles.leftContent}>
               <h2 className="fw-bold text-white">
