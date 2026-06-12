@@ -8,7 +8,7 @@ const GREEN = "#25D366";
 export default function TeacherLoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [otpMethod, setOtpMethod] = useState("whatsapp");
+  const [otpMethod, setOtpMethod] = useState("");
   const [showOtp, setShowOtp] = useState(false);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
@@ -20,8 +20,9 @@ export default function TeacherLoginPage() {
     window.open("https://student.nsit.in/login.aspx", "_blank");
   };
 
-  const handleVerifyOtpClick = () => {
-    setIsWhatsapp(otpMethod === "whatsapp");
+  const handleOtpClick = (method) => {
+    setIsWhatsapp(method === "whatsapp");
+    setOtpMethod(method);
     setShowOtp(true);
     setMobile("");
     setOtp("");
@@ -115,45 +116,44 @@ export default function TeacherLoginPage() {
           </div>
 
           <div style={{ marginBottom: 22 }}>
-            <p style={{ fontSize: 12, fontWeight: 700, color: "#0f172a", margin: "0 0 8px 0" }}>
-              Choose how you want to receive your OTP
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#0f172a", margin: "0 0 10px 0" }}>
+              Login with OTP via
             </p>
-            <div style={{ display: "flex", gap: 20 }}>
-              <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#475569", fontWeight: 500 }}>
-                <input type="radio" name="otpMethod" checked={otpMethod === "whatsapp"}
-                  onChange={() => setOtpMethod("whatsapp")}
-                  style={{ accentColor: GREEN, width: 16, height: 16, cursor: "pointer" }} />
-                <FaWhatsapp style={{ fontSize: 16, color: GREEN }} />
+            <div style={{ display: "flex", gap: 12 }}>
+              <button type="button" onClick={() => handleOtpClick("whatsapp")} style={{
+                flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                padding: "12px", background: "#fff", color: GREEN,
+                border: "2px solid #e2e8f0", borderRadius: 8, fontSize: 13, fontWeight: 700,
+                cursor: "pointer", transition: "all 180ms ease",
+              }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = GREEN; e.currentTarget.style.background = "#f0fdf4"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.background = "#fff"; }}
+              >
+                <FaWhatsapp style={{ fontSize: 18 }} />
                 WhatsApp
-              </label>
-              <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#475569", fontWeight: 500 }}>
-                <input type="radio" name="otpMethod" checked={otpMethod === "sms"}
-                  onChange={() => setOtpMethod("sms")}
-                  style={{ accentColor: "var(--main-color)", width: 16, height: 16, cursor: "pointer" }} />
-                <FaMobileScreen style={{ fontSize: 14, color: "var(--main-color)" }} />
+              </button>
+              <button type="button" onClick={() => handleOtpClick("sms")} style={{
+                flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+                padding: "12px", background: "#fff", color: "var(--main-color)",
+                border: "2px solid #e2e8f0", borderRadius: 8, fontSize: 13, fontWeight: 700,
+                cursor: "pointer", transition: "all 180ms ease",
+              }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--main-color)"; e.currentTarget.style.background = "#fef2f2"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.background = "#fff"; }}
+              >
+                <FaMobileScreen style={{ fontSize: 16 }} />
                 SMS
-              </label>
+              </button>
             </div>
           </div>
 
           <button type="submit" style={{
             width: "100%", padding: "14px", background: "var(--main-color)", color: "#fff",
             border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800,
-            cursor: "pointer", marginBottom: 10,
+            cursor: "pointer",
             boxShadow: "0 8px 24px rgba(237,28,36,0.25)",
           }}>
             Sign in to Portal
-          </button>
-
-          <button type="button" onClick={handleVerifyOtpClick} style={{
-            width: "100%", padding: "13px", background: "#fff", color: "var(--main-color)",
-            border: "2px solid var(--main-color)", borderRadius: 8, fontSize: 14, fontWeight: 800,
-            cursor: "pointer", transition: "all 180ms ease",
-          }}
-            onMouseEnter={(e) => { e.target.style.background = "var(--main-color)"; e.target.style.color = "#fff"; }}
-            onMouseLeave={(e) => { e.target.style.background = "#fff"; e.target.style.color = "var(--main-color)"; }}
-          >
-            Verify OTP
           </button>
         </form>
 
