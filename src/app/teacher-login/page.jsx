@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaUser, FaLock, FaWhatsapp, FaMobileScreen, FaHeadset } from "react-icons/fa6";
+import { FaUser, FaLock, FaWhatsapp, FaMobileScreen } from "react-icons/fa6";
 
 const GREEN = "#25D366";
 
@@ -56,160 +56,110 @@ export default function TeacherLoginPage() {
 
   return (
     <section style={{
-      minHeight: "100vh", display: "flex", fontFamily: "Inter, sans-serif",
+      minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",
+      position: "relative",
+      background: "url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600&q=80') center/cover no-repeat",
     }}>
-      {/* Left Panel - Info */}
       <div style={{
-        flex: 1, display: "flex", flexDirection: "column", position: "relative",
-        background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
-        color: "#fff", padding: "48px 40px", overflow: "hidden",
-      }} className="d-none d-lg-flex">
-        <div style={{ position: "relative", zIndex: 1, height: "100%", display: "flex", flexDirection: "column" }}>
-          <div>
-            <div style={{ fontWeight: 900, fontSize: 26, letterSpacing: -0.5 }}>
-              <span style={{ color: "#e94560" }}>Acade</span>mist ERP
-            </div>
-            <p style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 2, letterSpacing: 0.5 }}>
-              Best college management erp software
-            </p>
-          </div>
+        position: "absolute", inset: 0,
+        background: "linear-gradient(135deg, rgba(9,18,38,0.85) 0%, rgba(9,18,38,0.5) 100%)",
+      }} />
 
-          <div style={{ marginTop: "auto", marginBottom: "auto", maxWidth: 400 }}>
-            <h2 style={{ fontSize: 34, fontWeight: 900, lineHeight: 1.15, margin: "0 0 6px 0" }}>
-              Everything you need<br />for your College.
-            </h2>
-            <p style={{ fontSize: 13, color: "rgba(255,255,255,0.7)", lineHeight: 1.7, marginBottom: 28 }}>
-              A cloud-based college management ERP with 50+ fully customisable modules - connecting admissions, academics, finance, examination, hostel and biometric integrations under one trusted platform.
-            </p>
-
-            {[
-              "Attendance & Academic",
-              "Fee & Finance Module",
-              "Examination & Results",
-              "Staff & Payroll",
-              "Parent & Student Comm.",
-              "Hostel & Transport",
-            ].map((item) => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-                <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#e94560", flexShrink: 0 }} />
-                <span style={{ fontSize: 13, color: "rgba(255,255,255,0.85)" }}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Right Panel - Login Form */}
       <div style={{
-        flex: 1, display: "flex", flexDirection: "column", justifyContent: "center",
-        alignItems: "center", padding: "40px 24px", background: "#f8fafc", position: "relative",
+        position: "relative", zIndex: 1, width: "100%", maxWidth: 420, margin: "0 16px",
+        background: "#fff", borderRadius: 14, padding: "44px 36px",
+        boxShadow: "0 24px 64px rgba(0,0,0,0.3)",
       }}>
-        <div style={{
-          position: "absolute", top: 20, right: 28, display: "flex", alignItems: "center", gap: 6,
-          color: "#64748b", fontSize: 12, fontWeight: 600,
-        }}>
-          <FaHeadset style={{ fontSize: 14 }} />
-          Need help? <a href="tel:+917781020349" style={{ color: "var(--main-color)", textDecoration: "none", fontWeight: 700 }}>Contact Support</a>
-        </div>
-
-        <div style={{ width: "100%", maxWidth: 380 }}>
-          <div style={{ marginBottom: 28 }}>
-            <h1 style={{ fontSize: 22, fontWeight: 900, color: "#0f172a", margin: "0 0 4px 0", letterSpacing: -0.3 }}>
-              Secure Sign In
-            </h1>
-            <p style={{ fontSize: 13, color: "#64748b", margin: 0 }}>
-              Welcome back. Sign in to access your Academist ERP dashboard and services.
-            </p>
-          </div>
-
-          <form onSubmit={handleSignIn}>
-            <div style={{ marginBottom: 16 }}>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 700, color: "#0f172a", marginBottom: 5 }}>
-                <FaUser style={{ marginRight: 6, fontSize: 11, color: "var(--main-color)" }} />
-                Username
-              </label>
-              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter username" required
-                style={{
-                  width: "100%", padding: "12px 14px", borderRadius: 8,
-                  border: "1.5px solid #e2e8f0", fontSize: 14, outline: "none",
-                  background: "#fff", color: "#0f172a",
-                }}
-                onFocus={(e) => e.target.style.borderColor = "var(--main-color)"}
-                onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
-              />
-            </div>
-
-            <div style={{ marginBottom: 22 }}>
-              <label style={{ display: "block", fontSize: 12, fontWeight: 700, color: "#0f172a", marginBottom: 5 }}>
-                <FaLock style={{ marginRight: 6, fontSize: 11, color: "var(--main-color)" }} />
-                Password
-              </label>
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password" required
-                style={{
-                  width: "100%", padding: "12px 14px", borderRadius: 8,
-                  border: "1.5px solid #e2e8f0", fontSize: 14, outline: "none",
-                  background: "#fff", color: "#0f172a",
-                }}
-                onFocus={(e) => e.target.style.borderColor = "var(--main-color)"}
-                onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
-              />
-            </div>
-
-            <div style={{ marginBottom: 22 }}>
-              <p style={{ fontSize: 12, fontWeight: 700, color: "#0f172a", margin: "0 0 8px 0" }}>
-                Choose how you want to receive your OTP
-              </p>
-              <div style={{ display: "flex", gap: 20 }}>
-                <label style={{
-                  display: "flex", alignItems: "center", gap: 8, cursor: "pointer",
-                  fontSize: 13, color: "#475569", fontWeight: 500,
-                }}>
-                  <input type="radio" name="otpMethod" checked={otpMethod === "whatsapp"}
-                    onChange={() => setOtpMethod("whatsapp")}
-                    style={{ accentColor: GREEN, width: 16, height: 16, cursor: "pointer" }} />
-                  <FaWhatsapp style={{ fontSize: 16, color: GREEN }} />
-                  WhatsApp
-                </label>
-                <label style={{
-                  display: "flex", alignItems: "center", gap: 8, cursor: "pointer",
-                  fontSize: 13, color: "#475569", fontWeight: 500,
-                }}>
-                  <input type="radio" name="otpMethod" checked={otpMethod === "sms"}
-                    onChange={() => setOtpMethod("sms")}
-                    style={{ accentColor: "var(--main-color)", width: 16, height: 16, cursor: "pointer" }} />
-                  <FaMobileScreen style={{ fontSize: 14, color: "var(--main-color)" }} />
-                  SMS
-                </label>
-              </div>
-            </div>
-
-            <button type="submit" style={{
-              width: "100%", padding: "14px", background: "var(--main-color)", color: "#fff",
-              border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800,
-              cursor: "pointer", marginBottom: 10,
-              boxShadow: "0 8px 24px rgba(237,28,36,0.25)",
-            }}>
-              Sign in to Portal
-            </button>
-
-            <button type="button" onClick={handleVerifyOtpClick} style={{
-              width: "100%", padding: "13px", background: "#fff", color: "var(--main-color)",
-              border: "2px solid var(--main-color)", borderRadius: 8, fontSize: 14, fontWeight: 800,
-              cursor: "pointer", transition: "all 180ms ease",
-            }}
-              onMouseEnter={(e) => { e.target.style.background = "var(--main-color)"; e.target.style.color = "#fff"; }}
-              onMouseLeave={(e) => { e.target.style.background = "#fff"; e.target.style.color = "var(--main-color)"; }}
-            >
-              Verify OTP
-            </button>
-          </form>
-
-          <p style={{ textAlign: "center", marginTop: 28, fontSize: 10, color: "#94a3b8" }}>
-            Created by <strong style={{ color: "#0f172a" }}>Priyansh Raj</strong>
+        <div style={{ textAlign: "center", marginBottom: 28 }}>
+          <h1 style={{ fontSize: 22, fontWeight: 900, color: "#0f172a", margin: "0 0 4px 0" }}>
+            Teacher Login
+          </h1>
+          <p style={{ fontSize: 13, color: "#64748b", margin: 0 }}>
+            Sign in to access your Academist ERP dashboard
           </p>
         </div>
+
+        <form onSubmit={handleSignIn}>
+          <div style={{ marginBottom: 16 }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 700, color: "#0f172a", marginBottom: 5 }}>
+              <FaUser style={{ marginRight: 6, fontSize: 11, color: "var(--main-color)" }} />
+              Username
+            </label>
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter username" required
+              style={{
+                width: "100%", padding: "12px 14px", borderRadius: 8,
+                border: "1.5px solid #e2e8f0", fontSize: 14, outline: "none",
+                background: "#fff", color: "#0f172a",
+              }}
+              onFocus={(e) => e.target.style.borderColor = "var(--main-color)"}
+              onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+            />
+          </div>
+
+          <div style={{ marginBottom: 22 }}>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 700, color: "#0f172a", marginBottom: 5 }}>
+              <FaLock style={{ marginRight: 6, fontSize: 11, color: "var(--main-color)" }} />
+              Password
+            </label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password" required
+              style={{
+                width: "100%", padding: "12px 14px", borderRadius: 8,
+                border: "1.5px solid #e2e8f0", fontSize: 14, outline: "none",
+                background: "#fff", color: "#0f172a",
+              }}
+              onFocus={(e) => e.target.style.borderColor = "var(--main-color)"}
+              onBlur={(e) => e.target.style.borderColor = "#e2e8f0"}
+            />
+          </div>
+
+          <div style={{ marginBottom: 22 }}>
+            <p style={{ fontSize: 12, fontWeight: 700, color: "#0f172a", margin: "0 0 8px 0" }}>
+              Choose how you want to receive your OTP
+            </p>
+            <div style={{ display: "flex", gap: 20 }}>
+              <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#475569", fontWeight: 500 }}>
+                <input type="radio" name="otpMethod" checked={otpMethod === "whatsapp"}
+                  onChange={() => setOtpMethod("whatsapp")}
+                  style={{ accentColor: GREEN, width: 16, height: 16, cursor: "pointer" }} />
+                <FaWhatsapp style={{ fontSize: 16, color: GREEN }} />
+                WhatsApp
+              </label>
+              <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer", fontSize: 13, color: "#475569", fontWeight: 500 }}>
+                <input type="radio" name="otpMethod" checked={otpMethod === "sms"}
+                  onChange={() => setOtpMethod("sms")}
+                  style={{ accentColor: "var(--main-color)", width: 16, height: 16, cursor: "pointer" }} />
+                <FaMobileScreen style={{ fontSize: 14, color: "var(--main-color)" }} />
+                SMS
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" style={{
+            width: "100%", padding: "14px", background: "var(--main-color)", color: "#fff",
+            border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800,
+            cursor: "pointer", marginBottom: 10,
+            boxShadow: "0 8px 24px rgba(237,28,36,0.25)",
+          }}>
+            Sign in to Portal
+          </button>
+
+          <button type="button" onClick={handleVerifyOtpClick} style={{
+            width: "100%", padding: "13px", background: "#fff", color: "var(--main-color)",
+            border: "2px solid var(--main-color)", borderRadius: 8, fontSize: 14, fontWeight: 800,
+            cursor: "pointer", transition: "all 180ms ease",
+          }}
+            onMouseEnter={(e) => { e.target.style.background = "var(--main-color)"; e.target.style.color = "#fff"; }}
+            onMouseLeave={(e) => { e.target.style.background = "#fff"; e.target.style.color = "var(--main-color)"; }}
+          >
+            Verify OTP
+          </button>
+        </form>
+
+        <p style={{ textAlign: "center", marginTop: 28, fontSize: 10, color: "#94a3b8" }}>
+          Powered by <strong style={{ color: "#0f172a" }}>DotPlus Technologies Pvt. Ltd.</strong>
+        </p>
       </div>
 
       {/* OTP Modal */}
@@ -262,8 +212,7 @@ export default function TeacherLoginPage() {
                   </div>
                   <button type="submit" style={{
                     width: "100%", padding: "12px", background: accent, color: "#fff",
-                    border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800,
-                    cursor: "pointer",
+                    border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800, cursor: "pointer",
                     boxShadow: `0 8px 20px ${isWhatsapp ? "rgba(37,211,102,0.3)" : "rgba(237,28,36,0.3)"}`,
                   }}>
                     Send OTP
@@ -309,16 +258,14 @@ export default function TeacherLoginPage() {
                   <div style={{ display: "flex", gap: 10 }}>
                     <button type="submit" style={{
                       flex: 1, padding: "12px", background: accent, color: "#fff",
-                      border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800,
-                      cursor: "pointer",
+                      border: "none", borderRadius: 8, fontSize: 14, fontWeight: 800, cursor: "pointer",
                       boxShadow: `0 8px 20px ${isWhatsapp ? "rgba(37,211,102,0.3)" : "rgba(237,28,36,0.3)"}`,
                     }}>
                       Submit
                     </button>
                     <button type="button" onClick={() => window.open("https://student.nsit.in/login.aspx", "_blank")} style={{
                       flex: 1, padding: "12px", background: "#fff", color: accent,
-                      border: `2px solid ${accent}`, borderRadius: 8, fontSize: 14, fontWeight: 800,
-                      cursor: "pointer",
+                      border: `2px solid ${accent}`, borderRadius: 8, fontSize: 14, fontWeight: 800, cursor: "pointer",
                     }}>
                       Login
                     </button>
