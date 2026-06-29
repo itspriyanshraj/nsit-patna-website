@@ -19,7 +19,10 @@ export const navItems = [
         label: "Statutory Committees",
         href: "/institution/statutory-committees",
         items: [
-          { label: "Women's Cell", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/womencell2026.pdf" },
+      {
+        label: "Women's Cell",
+        href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/womencell2026.pdf",
+        external: true },
           { label: "Minority Cell", href: "https://www.nsit.in/Content/assets/c_images/StatutoryCummitteespdf/Minority-Cell.pdf" },
           { label: "Internal Complaint Committee", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/ICCommittee2026.pdf" },
           { label: "Anti-Ragging Committee", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/AntiRaggingCommittee2026.pdf" },
