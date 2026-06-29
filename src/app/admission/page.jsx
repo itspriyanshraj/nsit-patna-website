@@ -17,7 +17,7 @@ const programs = [
 ];
 
 export const metadata = {
-  title: "Admission - NSIT",
+  title: "Admission",
   description: "Admission process and programs offered at NSIT",
 };
 

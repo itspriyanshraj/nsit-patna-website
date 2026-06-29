@@ -1,6 +1,11 @@
-"use client";
+import type { Metadata } from "next";
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+
+export const metadata: Metadata = {
+  title: "Activity Reports & Events",
+  description: "View activity reports, workshops, seminars, and events at NSIT Patna. Download reports of academic and extracurricular activities.",
+};
 
 const activityDocs = [
   ["KRUST 2025 - Technical and Cultural Fest - 25 & 26 April 2025", "https://cdn.academist.app/Cloud/8/website/documents/KRUST2025.pdf"],

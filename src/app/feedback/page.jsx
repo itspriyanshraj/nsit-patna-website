@@ -1,5 +1,6 @@
 export const metadata = {
-  title: "Feedback | NSIT Patna",
+  title: "Feedback & Suggestions",
+  description: "Share your feedback with NSIT Patna. Submit student feedback, alumni feedback, parents feedback, teacher feedback, or satisfaction survey responses.",
 };
 
 const feedbackTypes = [

@@ -55,7 +55,7 @@ export default function Contact() {
           <div className="col-lg-5">
             <div className={`${styles.heroVisual} h-100`} aria-label="NSIT contact visual">
               <div className={styles.logoPanel}>
-                <Image src="/logo.png" alt="NSIT logo" width={110} height={110} priority />
+                <Image src="/images/logo-opt.png" alt="NSIT logo" width={110} height={110} priority />
                 <div>
                   <strong>Netaji Subhas Institute of Technology</strong>
                   <small>Amhara, Bihta, Patna</small>

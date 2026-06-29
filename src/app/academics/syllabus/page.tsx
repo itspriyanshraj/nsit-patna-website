@@ -1,5 +1,11 @@
 import { AcademicsShell, DocumentGrid } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Syllabus for All Programs",
+  description: "Download B.Tech, Diploma, BCA, and BBA syllabus for all branches at NSIT Patna.",
+};
 
 const syllabusDocs = [
   ["B.Tech CSE Syllabus", "https://www.nsit.in/Content/assets/c_images/Syllabus/BTech_CSE_Syllabus.pdf"],

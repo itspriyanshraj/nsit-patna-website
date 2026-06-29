@@ -1,5 +1,11 @@
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AQAR - Annual Quality Assurance Reports",
+  description: "Annual Quality Assurance Reports (AQAR) of NSIT Patna submitted to NAAC. Download AQAR documents for various years.",
+};
 
 const thStyle: React.CSSProperties = {
   padding: "12px 16px", textAlign: "left", color: "#fff", fontSize: 13,

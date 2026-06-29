@@ -85,11 +85,11 @@ export default function Header() {
             <span className={styles.contactPhone}>7781020349, 7781020359, 9102403261</span>
           </div>
           <div className="d-flex align-items-center flex-wrap gap-3" style={{ padding: 12 }}>
-            <a href="/online-payment" className={styles.paymentLink} style={{ cursor: "pointer", fontFamily: "inherit" }}>
+            <a href="/online-payment" target="_blank" rel="noopener noreferrer" className={styles.paymentLink} style={{ cursor: "pointer", fontFamily: "inherit" }}>
               <span aria-hidden="true">₹</span>
               Online Payment
             </a>
-            <a href="/teacher-login" className={styles.loginLink}>
+            <a href="/teacher-login" target="_blank" rel="noopener noreferrer" className={styles.loginLink}>
               <span aria-hidden="true">↗</span>
               Teacher Login
             </a>
@@ -100,7 +100,7 @@ export default function Header() {
       <div className={styles.identityBand}>
         <div className={`${styles.inner} ${styles.identityGrid}`}>
           <a className={`${styles.brand} d-flex align-items-center`} style={{ gap: 16 }} href="#" aria-label="NSIT home">
-            <Image src="/logo.png" alt="NSIT logo" width={82} height={82} priority className={styles.brandLogo} />
+            <Image src="/images/logo-opt.png" alt="NSIT logo" width={82} height={82} priority className={styles.brandLogo} />
             <span className={styles.brandText}>
               <strong>Netaji Subhas Institute of Technology</strong>
               <small>Amhara, Bihta, Patna - 801118</small>
@@ -111,7 +111,7 @@ export default function Header() {
             <div className={styles.logoTrack}>
               {scrollingLogos.map((item, index) => (
                 <div className={styles.recognitionCard} key={`${item.title}-${index}`}>
-                  <Image src={item.image} alt="" width={54} height={54} loading="eager" className={styles.recogLogo} />
+                  <Image src={item.image} alt={`${item.title} - ${item.subtitle}`} width={54} height={54} loading="eager" className={styles.recogLogo} />
                   <span className={styles.recogText}>
                     <strong>{item.title}</strong>
                     <small>{item.subtitle}</small>

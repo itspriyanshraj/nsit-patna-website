@@ -1,5 +1,11 @@
 import { AcademicsShell, DocumentGrid } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "NAAC Accreditation Documents",
+  description: "NAAC accreditation documents and reports for NSIT Patna. Download IQAC, SSR, and related NAAC documents.",
+};
 
 const edcDocs: [string, string][] = [
   ["Entrepreneurship Development Cell", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image9c4d9a68c0f548b7a6cda51891f66d40hjw510zmbpj4eww6jx02g4.pdf"],

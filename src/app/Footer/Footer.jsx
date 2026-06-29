@@ -31,8 +31,8 @@ export default function Footer() {
             <span className="d-block mb-1 text-uppercase" style={{ color: "var(--main-color)", fontSize: 12, fontWeight: 800 }}>Admissions & Campus Support</span>
             <h2 className={`${styles.ctaPanelH2} text-white`}>Start your NSIT journey with the right information.</h2>
           </div>
-          <a href="#" className="d-inline-flex align-items-center justify-content-center gap-2 text-white fw-bolder text-nowrap" style={{ minHeight: 50, padding: "0 16px 0 7px", background: "#ed1c24", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, boxShadow: "0 16px 30px rgba(237,28,36,0.24)" }}>
-            <span style={{ width: 32, height: 32, display: "grid", placeItems: "center", color: "#ed1c24", background: "var(--white-color)", borderRadius: 7 }}>✉</span>
+          <a href="#" className="d-inline-flex align-items-center justify-content-center gap-2 text-white fw-bolder text-nowrap" style={{ minHeight: 50, padding: "0 16px 0 7px", background: "var(--main-color)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, boxShadow: "0 16px 30px rgba(237,28,36,0.24)" }}>
+            <span style={{ width: 32, height: 32, display: "grid", placeItems: "center", color: "var(--main-color)", background: "var(--white-color)", borderRadius: 7 }}>✉</span>
             Send Enquiry
             <span style={{ transition: "transform 180ms ease" }}>→</span>
           </a>
@@ -41,7 +41,7 @@ export default function Footer() {
         <div className={`${styles.footerGrid} mt-4`}>
           <section className={`${styles.brandBlock} d-grid`} style={{ gridTemplateColumns: "92px 1fr", gap: 18 }}>
             <Image
-              src="/logo.png"
+              src="/images/logo-opt.png"
               alt="Netaji Subhas Institute of Technology logo"
               width={92}
               height={92}

@@ -8,7 +8,8 @@ const placementLinks = [
 ];
 
 export const metadata = {
-  title: "Placement | NSIT Patna",
+  title: "Placement & Training",
+  description: "NSIT Patna placement cell provides 100% assistance with 70+ recruiting companies. View placement statistics, our recruiters, and training programs.",
 };
 
 const stats = [

@@ -2,7 +2,8 @@ import Image from "next/image";
 import { InstitutionShell, styles } from "../InstitutionShell";
 
 export const metadata = {
-  title: "About Us | NSIT Patna",
+  title: "About Us",
+  description: "NSIT Patna was established in 2007 with 4,00,000 sq.ft. campus at Amhara, Bihta. Read about our vision, mission, approvals and infrastructure.",
 };
 
 export default function AboutUsPage() {
@@ -51,7 +52,7 @@ export default function AboutUsPage() {
           </p>
         </div>
         <div className={`${styles.splitMedia} ${styles.logoMedia}`}>
-          <img src="/logo.png" alt="NSIT" className="w-100 h-100" style={{objectFit: 'contain', padding: 34, background: '#ffffff'}} />
+          <img src="/images/logo-opt.png" alt="NSIT" className="w-100 h-100" style={{objectFit: 'contain', padding: 34, background: '#ffffff'}} />
         </div>
       </section>
     </InstitutionShell>

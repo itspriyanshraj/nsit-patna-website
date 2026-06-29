@@ -1,5 +1,11 @@
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Academic Calendar",
+  description: "View the academic calendar for NSIT Patna including semester schedules, holidays, and examination dates.",
+};
 
 const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 

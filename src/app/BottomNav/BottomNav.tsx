@@ -86,7 +86,7 @@ export default function BottomNav() {
         <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
           <div className="menu-panel" onClick={(e) => e.stopPropagation()}>
             <div className="menu-header">
-              <Image src="/logo.png" alt="NSIT" width={172} height={64} />
+              <Image src="/images/logo-opt.png" alt="NSIT" width={110} height={110} />
               <button className="menu-close" onClick={() => setMenuOpen(false)}><FaXmark /></button>
             </div>
             <div className="menu-tree">

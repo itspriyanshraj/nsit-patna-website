@@ -1,5 +1,11 @@
 import { AcademicsShell, DocumentGrid } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "DVV - Data Validation & Verification",
+  description: "DVV (Data Validation and Verification) documents for NAAC accreditation of NSIT Patna.",
+};
 
 const thStyle: React.CSSProperties = {
   padding: "12px 16px", textAlign: "left", color: "#fff", fontSize: 13,

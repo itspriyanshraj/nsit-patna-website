@@ -1,4 +1,10 @@
 import { AcademicsShell } from "../AcademicsShell";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Examination Schedule & Results",
+  description: "Examination schedule, results, and academic calendar information for students at NSIT Patna.",
+};
 
 export default function ExaminationPage() {
   return (

@@ -1,5 +1,11 @@
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Courses Offered at NSIT Patna",
+  description: "Explore B.Tech in CSE, Civil, EEE, ECE, Mechanical and Applied Science, plus Diploma, BCA, and BBA programs at NSIT Patna with detailed branch information.",
+};
 
 const programs = [
   {

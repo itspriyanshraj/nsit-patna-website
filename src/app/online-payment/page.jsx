@@ -1,117 +1,95 @@
-"use client";
-
 import styles from "./online-payment.module.css";
+
+export const metadata = {
+  title: "Online Fee Payment Portal",
+  description: "Make online fee payments for NSIT Patna. Secure payment portal for tuition and other fees.",
+};
 
 export default function OnlinePaymentPage() {
   return (
-    <div className={styles.wrapper} style={{
-      minHeight: "100vh",
-      backgroundImage: "url('/images/login-bg.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}>
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "rgba(0,0,0,0.65)",
-      }} />
-      <div className="container-fluid p-0" style={{ position: "relative", zIndex: 1 }}>
+    <div
+      className={styles.wrapper}
+      style={{
+        minHeight: "100vh",
+      }}>
+      <div className="container-fluid p-0">
         <div className="row g-0 min-vh-100">
-
           {/* Left Red Section */}
-          <div className="col-lg-7 d-none d-lg-flex align-items-center justify-content-center position-relative overflow-hidden" style={{
-            background: "linear-gradient(rgba(180,0,0,0.85), rgba(180,0,0,0.9)), #c70000",
-          }}>
+          <div
+            className="col-lg-7 d-none d-lg-flex flex-column position-relative overflow-hidden"
+            style={{
+              backgroundImage: "url('/images/login-bg.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}>
             <div className={styles.leftContent}>
-              <h2 className="fw-bold text-white">
-                NSIT Online Payment
-              </h2>
-              <p className="text-white">
-                Secure fee payment portal for students and parents.
-              </p>
-              <div className="text-center mt-5">
-                <img src="/images/product.jpg" alt="NSIT" className={styles.productImg} />
+              <div className={styles.textSection}>
+                <h2 className={styles.mainTitle}>NSIT Online Payment</h2>
+                <p className={styles.subText}>
+                  Secure fee payment portal for students and parents.
+                </p>
+              </div>
+            </div>
+            <div className={styles.imageSection}>
+              <div className={styles.cardWrapper}>
+                <img
+                  src="/images/mandala-circle-opt.png?v=1"
+                  alt=""
+                  className={styles.cardMandala}
+                />
+                <img
+                  src="/images/payment-illustration.png?v=1"
+                  alt="Payment"
+                  className={styles.productImg}
+                />
               </div>
             </div>
             <div className={styles.networkBg}></div>
           </div>
 
           {/* Payment Section */}
-          <div className="col-lg-5 d-flex align-items-center justify-content-center position-relative overflow-hidden" style={{ background: "#fff" }}>
-            <div className={styles.paymentBox}>
-              <div className="text-center mb-4">
-                <img src="/images/logo.png" alt="NSIT" width="180" />
+          <div
+            className="col-lg-5 d-flex align-items-center justify-content-center position-relative overflow-hidden"
+            style={{ background: "#fff" }}>
+            <div className={styles.loginBox}>
+              <div className="text-center mb-3">
+                <img src="/images/logo-opt.png" alt="NSIT" width="150" />
               </div>
 
-              <h3 className={`text-center ${styles.paymentTitle}`}>
-                Online Payment
-              </h3>
-              <p className="text-center text-muted small mb-4">
-                Select your preferred payment method to proceed.
+              <h3 className={`text-center ${styles.loginTitle}`}>Sign In</h3>
+              <p className={`text-center ${styles.loginSubtitle}`}>
+                Enter your credentials to access the payment portal
               </p>
 
-              <div className="d-flex flex-column gap-3">
-                <a href="https://student.nsit.in/login.aspx" target="_blank" rel="noopener noreferrer" className={styles.paymentCard}>
-                  <div className="d-flex align-items-center gap-3">
-                    <span className={styles.paymentIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/>
-                      </svg>
-                    </span>
-                    <div className="flex-grow-1">
-                      <div className="fw-bold" style={{ fontSize: 15, color: "#14213d" }}>SBI Collect</div>
-                      <div style={{ fontSize: 12, color: "#667085" }}>Pay via State Bank of India</div>
-                    </div>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                    </svg>
-                  </div>
-                </a>
+              <form className={styles.loginForm}>
+                <div className={styles.inputGroup}>
+                  <label className={styles.inputLabel}>Enter username</label>
+                  <input
+                    type="text"
+                    placeholder="Enter username"
+                    className={styles.loginInput}
+                  />
+                </div>
 
-                <a href="https://student.nsit.in/login.aspx" target="_blank" rel="noopener noreferrer" className={styles.paymentCard}>
-                  <div className="d-flex align-items-center gap-3">
-                    <span className={styles.paymentIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/>
-                      </svg>
-                    </span>
-                    <div className="flex-grow-1">
-                      <div className="fw-bold" style={{ fontSize: 15, color: "#14213d" }}>Debit / Credit Card</div>
-                      <div style={{ fontSize: 12, color: "#667085" }}>Visa, Mastercard, RuPay</div>
-                    </div>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                    </svg>
-                  </div>
-                </a>
+                <div className={styles.inputGroup}>
+                  <label className={styles.inputLabel}>Enter password</label>
+                  <input
+                    type="password"
+                    placeholder="Enter password"
+                    className={styles.loginInput}
+                  />
+                </div>
 
-                <a href="https://student.nsit.in/login.aspx" target="_blank" rel="noopener noreferrer" className={styles.paymentCard}>
-                  <div className="d-flex align-items-center gap-3">
-                    <span className={styles.paymentIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 9v6"/><path d="M9 12h6"/>
-                      </svg>
-                    </span>
-                    <div className="flex-grow-1">
-                      <div className="fw-bold" style={{ fontSize: 15, color: "#14213d" }}>UPI / Mobile Banking</div>
-                      <div style={{ fontSize: 12, color: "#667085" }}>Google Pay, PhonePe, Paytm</div>
-                    </div>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#98a2b3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                    </svg>
-                  </div>
-                </a>
-              </div>
+                <button type="submit" className={styles.loginBtn}>
+                  Login
+                </button>
+              </form>
 
-              <div className={styles.secureBadge}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-                Secured with SSL encryption
-              </div>
+              <p className={styles.poweredBy}>
+                Created By : <strong>Priyansh Raj</strong>
+              </p>
             </div>
-
-            <img src="/images/mandala.png" alt="" className={styles.mandalaImg} />
           </div>
         </div>
       </div>

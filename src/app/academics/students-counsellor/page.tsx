@@ -1,5 +1,11 @@
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Student's Counsellor",
+  description: "Find your academic counsellor at NSIT Patna. Contact details for B.Tech, Diploma, BCA, and BBA program counsellors.",
+};
 
 const counsellors = [
   {
