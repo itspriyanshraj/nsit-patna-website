@@ -11,7 +11,7 @@ export default function AboutUsPage() {
     <InstitutionShell activePath="/institution/about-us" title="About Us">
       <section className={styles.introGrid}>
         <div className={styles.media}>
-          <Image src="/vertical.png" alt="About NSIT" fill style={{objectFit: 'cover'}} loading="lazy" />
+          <Image src="/vertical.png" alt="About NSIT" fill style={{objectFit: 'cover'}} loading="lazy" sizes="100vw" />
         </div>
         <div className={styles.introBody}>
           <span className="d-inline-flex text-uppercase" style={{color: 'var(--main-color)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em'}}>19+ Years of Success in the Field of Education</span>
