@@ -8,7 +8,6 @@ const GREEN = "#25D366";
 export default function TeacherLoginContent() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [otpMethod, setOtpMethod] = useState("");
   const [showOtp, setShowOtp] = useState(false);
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
@@ -22,7 +21,6 @@ export default function TeacherLoginContent() {
 
   const handleOtpClick = (method) => {
     setIsWhatsapp(method === "whatsapp");
-    setOtpMethod(method);
     setShowOtp(true);
     setOtpSent(false);
     setOtp("");
@@ -64,7 +62,7 @@ export default function TeacherLoginContent() {
           boxShadow: "0 20px 60px rgba(0,0,0,0.5)",
         }}>
           <div className="text-center mb-4">
-            <img src="/images/logo-opt.png" alt="NSIT" width="130" style={{ marginBottom: 12 }} />
+            <img src="/images/logo-opt-v3.png" alt="NSIT" width="130" style={{ marginBottom: 12 }} />
             <h3 style={{ fontWeight: 850, fontSize: 22, color: "#1a1a2e" }}>Teacher Login</h3>
             <p style={{ color: "#666", fontSize: 14, margin: "4px 0 0" }}>
               Sign in to access the teacher portal

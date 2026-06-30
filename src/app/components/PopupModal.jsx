@@ -34,7 +34,7 @@ export default function PopupModal() {
         <div className={styles.banner}>
           <div className={styles.leftPanel}>
             <div className={styles.logoArea}>
-              <Image src="/images/logo-opt.png" alt="NSIT" width={50} height={50} priority />
+              <Image src="/images/logo-opt-v3.png" alt="NSIT" width={50} height={50} priority />
             </div>
             <div className={styles.collegeName}>
               <h2 className={styles.nameMain}>Netaji Subhas Institute of Technology</h2>

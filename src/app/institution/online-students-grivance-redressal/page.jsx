@@ -1,18 +1,18 @@
 import { InstitutionShell, styles } from "../InstitutionShell";
 
 export const metadata = {
-  title: "Online Students Grivance Redressal | NSIT Patna",
+  title: "Online Students Grievance Redressal | NSIT Patna",
 };
 
-export default function OnlineStudentsGrivanceRedressalPage() {
+export default function OnlineStudentsGrievanceRedressalPage() {
   return (
     <InstitutionShell
       activePath="/institution/online-students-grivance-redressal"
-      title="Online Students Grivance Redressal"
+      title="Online Students Grievance Redressal"
     >
       <section className={styles.formPanel}>
         <span className="d-inline-flex text-uppercase" style={{color: 'var(--main-color)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em'}}>Student Support</span>
-        <h2>Online Students Grivance Redressal</h2>
+        <h2>Online Students Grievance Redressal</h2>
         <p>Student Name, Course, Nature of Grievance, Class Roll No., Contact Number, Details, Upload File and Submit.</p>
         <form className={styles.form}>
           <label>

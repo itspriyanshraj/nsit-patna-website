@@ -3,12 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import type { ComponentType, SVGProps } from "react";
 import { usePathname } from "next/navigation";
 import { navItems } from "../navData";
-import { FaHouse, FaPhone, FaGraduationCap, FaBars, FaXmark, FaBuildingColumns, FaBuilding } from "react-icons/fa6";
+import { FaHouse, FaPhone, FaBars, FaXmark, FaBuildingColumns, FaBuilding } from "react-icons/fa6";
 
-type MainItem = { label: string; icon: React.ComponentType; href: string };
-type MenuBtn = { label: string; icon: React.ComponentType; isMenu: true };
+type NavIcon = ComponentType<SVGProps<SVGSVGElement>>;
+type NavTreeItem = {
+  label: string;
+  href?: string;
+  items?: NavTreeItem[];
+};
+type MainItem = { label: string; icon: NavIcon; href: string };
+type MenuBtn = { label: string; icon: NavIcon; isMenu: true };
 
 const mainItems: (MainItem | MenuBtn)[] = [
   { label: "Home", icon: FaHouse, href: "/" },
@@ -18,9 +25,10 @@ const mainItems: (MainItem | MenuBtn)[] = [
   { label: "Contact", icon: FaPhone, href: "/contact" },
 ];
 
-function TreeItem({ item, depth = 0, onClose }: { item: any; depth?: number; onClose: () => void }) {
+function TreeItem({ item, depth = 0, onClose }: { item: NavTreeItem; depth?: number; onClose: () => void }) {
   const [open, setOpen] = useState(false);
-  const hasChildren = item.items && item.items.length > 0;
+  const childItems = item.items ?? [];
+  const hasChildren = childItems.length > 0;
 
   return (
     <div className={`tree-depth-${Math.min(depth, 2)}`}
@@ -43,7 +51,7 @@ function TreeItem({ item, depth = 0, onClose }: { item: any; depth?: number; onC
       </div>
       {hasChildren && open && (
         <div onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-          {item.items.map((child: any, i: number) => (
+          {childItems.map((child, i) => (
             <TreeItem key={i} item={child} depth={depth + 1} onClose={onClose} />
           ))}
         </div>
@@ -86,11 +94,11 @@ export default function BottomNav() {
         <div className="menu-overlay" onClick={() => setMenuOpen(false)}>
           <div className="menu-panel" onClick={(e) => e.stopPropagation()}>
             <div className="menu-header">
-              <Image src="/images/logo-opt.png" alt="NSIT" width={110} height={110} />
+              <Image src="/images/logo-opt-v3.png" alt="NSIT" width={110} height={110} />
               <button className="menu-close" onClick={() => setMenuOpen(false)}><FaXmark /></button>
             </div>
             <div className="menu-tree">
-              {navItems.map((item, i) => (
+              {(navItems as NavTreeItem[]).map((item, i) => (
                 <TreeItem key={i} item={item} onClose={() => setMenuOpen(false)} />
               ))}
             </div>

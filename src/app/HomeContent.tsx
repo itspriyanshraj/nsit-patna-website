@@ -154,11 +154,11 @@ const notices = [
 ];
 
 const usefulLinks = [
-  "IQAC - VISION & MISSION IQAC - VISION & MISSION",
-  "Hostel Related Enquiry 9905650961, 7870034062, 6201315981",
-  "IQAC: INTERNAL QUALITY ASSURANCE CELL",
-  "TRAINING/INTERNSHIP LETTER REQUEST FORM <-------Click here to download the form",
-  "NSIT EXAMS NEWS <-----Click here to join our examination telegram channel for all exam related updates.",
+  { label: "IQAC - Vision & Mission", href: "/institution/iqac" },
+  { label: "Hostel Related Enquiry 9905650961, 7870034062, 6201315981", href: "/infrastructure/hostel" },
+  { label: "IQAC: Internal Quality Assurance Cell", href: "/institution/iqac" },
+  { label: "Training/Internship Letter Request Form", href: "/placement/about" },
+  { label: "NSIT Exams News", href: "/academics/examination" },
 ];
 
 const courseLinks = [
@@ -195,13 +195,14 @@ const telegramLinks = [
     title: "NSIT CAMPUS Virtual Tour",
     text: "",
     icon: <FaVideo />,
+    href: "/admission/virtual-tour",
   },
   {
     title: "Student's Login",
     text: "",
     icon: <FaUser />,
     action: true,
-    href: "#",
+    href: "https://student.nsit.in/login.aspx",
   },
   {
     title: "Teacher's Login",
@@ -309,9 +310,9 @@ export default function HomeContent() {
             </div>
             <div className={styles.linkStack}>
               {usefulLinks.map((link) => (
-                <a href="#" className={styles.resourceCard} key={link}>
+                <a href={link.href} className={styles.resourceCard} key={link.label}>
                   <FaGlobe aria-hidden="true" />
-                  <span>{link}</span>
+                  <span>{link.label}</span>
                 </a>
               ))}
             </div>
@@ -347,7 +348,7 @@ export default function HomeContent() {
             <div className={styles.telegramGrid}>
                 {telegramLinks.map((link) => (
                 <a
-                  href={link.href || "#"}
+                  href={link.href || "/contact"}
                   className={`${styles.telegramCard} ${link.action ? styles.telegramAction : ""} ${link.outline ? styles.telegramOutline : ""}`}
                   key={link.title}
                 >
@@ -366,60 +367,21 @@ export default function HomeContent() {
         </div>
       </section>
 
-<section className={`container-xxl ${styles.courseQuickSection}`}>
-        <div className={styles.courseQuickGrid}>
-          {courseLinks.map((course, index) => (
-            <a
-              href="/contact"
-              className={`${styles.courseQuickCard} ${index === activeCourse ? styles.courseQuickCardActive : ""}`}
-              key={course.name}
-              onMouseEnter={() => setActiveCourse(index)}
-            >
-              <div className="d-flex align-items-center justify-content-between gap-3">
-                <span className={styles.courseIcon}>
-                  <FaFileLines aria-hidden="true" />
-                </span>
-                <FaArrowRight aria-hidden="true" className={styles.courseArrow} />
-              </div>
-              <strong className="d-block fw-bolder" style={{ marginTop: 20, fontSize: 22, lineHeight: 1.1 }}>{course.name}</strong>
-              <small className="d-block fw-bolder" style={{ marginTop: 8, color: "#667085", fontSize: 13, lineHeight: 1.3 }}>Subjects available</small>
-              <div
-                className={styles.courseSubjectBox}
-                aria-label={`${course.name} subjects`}
-              >
-                <span>Subjects</span>
-                {course.subjects.map((subject) => (
-                  <small key={subject}>{subject}</small>
-                ))}
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-             
-      <section className={styles.aboutSection}>
-        <div className="container-xxl">
-          <div className="row g-5 align-items-center">
-            <div className="col-lg-6">
-              <div className={styles.aboutMedia}>
-                <Image src="/nsit-student.jpg" alt="NSIT campus life" fill sizes="(max-width: 991px) 100vw, 50vw" />
-              </div>
+    <section className={styles.aboutSection} id="about-section">
+      <div className="container-xxl">
+        <div className="row g-5 align-items-center">
+          <div className="col-lg-6">
+            <div className={styles.aboutMedia}>
+              <Image src="/nsit-student.jpg" alt="NSIT campus life" fill sizes="(max-width: 991px) 100vw, 50vw" />
             </div>
-            <div className="col-lg-6">
-              <span className="d-inline-flex align-items-center gap-2 text-uppercase fw-bolder" style={{ color: "#ed1c24", fontSize: 12, letterSpacing: "0.08em" }}>About College</span>
-              <h2 className={styles.aboutSectionH2}>Technical education with infrastructure, approvals and student support.</h2>
-              <p className={styles.aboutSectionP}>
-                Netaji Subhas Institute of Technology, two kilometers away from Bihta
-                Railway Station, has been established at Amhara in Patna district. It is
-                approved by AICTE, New Delhi and recognized by Department of Science &
-                Technology, Government of Bihar, affiliated to Aryabhatta Knowledge
-                University Patna and State Board of Technical Education, Patna.
-              </p>
-              <p className={styles.aboutSectionP}>
-                NSIT offers education with the latest technologies available in the
-                present area, including Wi-Fi campus, computer centre and digital library.
-              </p>
+          </div>
+          <div className="col-lg-6">
+            <span className="d-inline-flex align-items-center gap-2 text-uppercase fw-bolder" style={{ color: "#ed1c24", fontSize: 12, letterSpacing: "0.08em" }}>About College</span>
+            <h2 className={styles.aboutSectionH2}>Technical education with infrastructure, approvals and student support.</h2>
+            <p className={styles.aboutSectionP}>
+              Netaji Subhas Institute of Technology (NSIT), two kilometers away from Bihta Railway Station, has been established at Amhara in Patna district. It is approved by AICTE, New Delhi and recognized by Department of Science & Technology, Government of Bihar, affiliated to Aryabhatta Knowledge University Patna and State Board of Technical Education, Patna. The institution is ISO 9001:2008 Certified. NSIT has the huge infrastructure of approximately 4 lakh sq. ft of built up area on approximately 11 Acres of Land at Amhara, Bihta, Patna. NSIT offers the education with the latest Technologies available in the present area. (i.e. Wi-Fi Campus, Computer Centre, Digital Library etc)..
+            </p>
+            
               <div className={styles.featureList}>
                 {features.map((item) => (
                   <span key={item} className="d-flex align-items-start gap-2 fw-bolder" style={{ color: "#14213d", lineHeight: 1.5 }}>
@@ -430,9 +392,22 @@ export default function HomeContent() {
               </div>
             </div>
           </div>
+
+          <div className="text-center mt-4">
+            <a href="/institution/about-us" className="d-inline-flex align-items-center justify-content-center gap-2" style={{ padding: "12px 32px", background: "var(--main-color)", color: "var(--white-color)", borderRadius: 8, fontWeight: 600, textDecoration: "none", transition: "all 180ms ease", boxShadow: "0 4px 14px rgba(237, 28, 36, 0.3)" }}>
+              Learn More About NSIT
+              <FaArrowRight aria-hidden="true" style={{ fontSize: 16 }} />
+            </a>
+          </div>
         </div>
       </section>
 
+      <section className="visually-hidden" id="about-section">
+        <div className="container-xxl py-5">
+          <h1>NSIT About Page</h1>
+          <p>This is the about page content for NSIT. It contains detailed information about the institute including history, infrastructure, affiliations, and programs offered.</p>
+        </div>
+      </section>
 
        <section className={styles.placementShowcase}>
         <div className="container-xxl">
@@ -517,7 +492,7 @@ export default function HomeContent() {
                   </div>
                   <p className={styles.testimonialCardP}>
                     <FaQuoteLeft aria-hidden="true" style={{ marginRight: 10, color: "#ed1c24", fontSize: 17 }} />
-                    {item.text} <a href="#" className="fw-bolder" style={{ color: "#ed1c24" }}>Read more</a>
+                    {item.text} <a href="/placement" className="fw-bolder" style={{ color: "#ed1c24" }}>Read more</a>
                   </p>
                   <div className="d-flex gap-2" style={{ color: "#ffa400", marginTop: 28 }} aria-label="5 star rating">
                     {Array.from({ length: 5 }).map((_, starIndex) => (

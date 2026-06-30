@@ -1,6 +1,7 @@
 import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
 import type { Metadata } from "next";
+import { FaFilePdf } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Student's Counsellor",
@@ -35,7 +36,7 @@ const counsellors = [
 ];
 
 const counsellorDocs = [
-  ["Student's Councellor 2026", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/StudentCounselor2026.pdf"],
+  ["Student's Counsellor 2026", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/StudentCounselor2026.pdf"],
   ["Anti-Ragging Committee", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/AntiRaggingCommittee2026.pdf"],
   ["Grievance Redressal Committee", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/GRCommittee2026.pdf"],
   ["Women's Cell", "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/womencell2026.pdf"],
@@ -43,10 +44,10 @@ const counsellorDocs = [
 
 export default function StudentsCounsellorPage() {
   return (
-    <AcademicsShell activePath="/academics/students-counsellor" title="Student's Councellor">
+    <AcademicsShell activePath="/academics/students-counsellor" title="Student's Counsellor">
       <div className={styles.introPanel}>
         <span className="d-inline-flex text-uppercase" style={{color: 'var(--main-color)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em'}}>Guidance</span>
-        <h2>Student&apos;s Councellor</h2>
+        <h2>Student&apos;s Counsellor</h2>
         <p>
           The Student Counselling Cell at NSIT provides guidance and support to students
           on academic, personal, and career-related matters. The counsellors help students
@@ -86,9 +87,19 @@ export default function StudentsCounsellorPage() {
         <div className={styles.docs}>
           {counsellorDocs.map(([label, href]) => (
             <a href={href} target="_blank" rel="noreferrer" className={styles.docCard} key={label}>
-              <span>PDF</span>
-              <strong>{label}</strong>
-              <small>Click to open document</small>
+              <span className={styles.docBadge}>
+                <FaFilePdf />
+                <i>PDF</i>
+              </span>
+              <span className={styles.docBody}>
+                <strong>{label}</strong>
+                <small>
+                  <span className={styles.downloadIcon}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  </span>
+                  Open Document
+                </small>
+              </span>
             </a>
           ))}
         </div>

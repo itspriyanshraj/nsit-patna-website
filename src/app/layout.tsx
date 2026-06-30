@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.ico?v=2", type: "image/x-icon" },
-      { url: "/icon.png?v=2", type: "image/png", sizes: "193x193" },
+      { url: "/favicon.ico?v=3", type: "image/x-icon" },
+      { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
     ],
-    shortcut: "/favicon.ico?v=2",
-    apple: { url: "/icon.png?v=2", type: "image/png", sizes: "193x193" },
+    shortcut: "/favicon.ico?v=3",
+    apple: { url: "/icon.png?v=3", type: "image/png", sizes: "512x512" },
   },
   openGraph: {
     title: "NSIT Patna | Netaji Subhas Institute of Technology",
     description:
       "Discover NSIT Patna academics, recognitions, campus infrastructure, placement support, and admissions information.",
-    images: ["/images/logo-opt.png"],
+    images: ["/images/logo-opt-v3.png"],
     type: "website",
   },
   alternates: {

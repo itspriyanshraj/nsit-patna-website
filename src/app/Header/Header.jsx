@@ -99,8 +99,8 @@ export default function Header() {
 
       <div className={styles.identityBand}>
         <div className={`${styles.inner} ${styles.identityGrid}`}>
-          <a className={`${styles.brand} d-flex align-items-center`} style={{ gap: 16 }} href="#" aria-label="NSIT home">
-            <Image src="/images/logo-opt.png" alt="NSIT logo" width={82} height={82} priority className={styles.brandLogo} />
+          <a className={`${styles.brand} d-flex align-items-center`} style={{ gap: 16 }} href="/" aria-label="NSIT home">
+            <Image src="/images/logo-opt-v3.png" alt="NSIT logo" width={82} height={82} priority className={styles.brandLogo} />
             <span className={styles.brandText}>
               <strong>Netaji Subhas Institute of Technology</strong>
               <small>Amhara, Bihta, Patna - 801118</small>

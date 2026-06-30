@@ -1,4 +1,4 @@
-import { AcademicsShell, DocumentGrid } from "../AcademicsShell";
+import { AcademicsShell } from "../AcademicsShell";
 import styles from "../academicsPages.module.css";
 import type { Metadata } from "next";
 

@@ -52,7 +52,7 @@ export default function AboutUsPage() {
           </p>
         </div>
         <div className={`${styles.splitMedia} ${styles.logoMedia}`}>
-          <img src="/images/logo-opt.png" alt="NSIT" className="w-100 h-100" style={{objectFit: 'contain', padding: 34, background: '#ffffff'}} />
+          <img src="/images/logo-opt-v3.png" alt="NSIT" className="w-100 h-100" style={{objectFit: 'contain', padding: 34, background: '#ffffff'}} />
         </div>
       </section>
     </InstitutionShell>

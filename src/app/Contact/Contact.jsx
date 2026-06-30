@@ -20,7 +20,12 @@ const contactCards = [
   },
 ];
 
-const quickLinks = ["Admissions", "Placement", "Departments", "Campus Visit"];
+const quickLinks = [
+  ["Admissions", "/admission"],
+  ["Placement", "/placement"],
+  ["Departments", "/academics/courses"],
+  ["Campus Visit", "/admission/virtual-tour"],
+];
 
 export default function Contact() {
   return (
@@ -55,7 +60,7 @@ export default function Contact() {
           <div className="col-lg-5">
             <div className={`${styles.heroVisual} h-100`} aria-label="NSIT contact visual">
               <div className={styles.logoPanel}>
-                <Image src="/images/logo-opt.png" alt="NSIT logo" width={110} height={110} priority />
+                <Image src="/images/logo-opt-v3.png" alt="NSIT logo" width={110} height={110} priority />
                 <div>
                   <strong>Netaji Subhas Institute of Technology</strong>
                   <small>Amhara, Bihta, Patna</small>
@@ -141,9 +146,9 @@ export default function Contact() {
                   <span className={styles.eyebrow}>Quick Access</span>
                   <h2>Popular contact topics</h2>
                   <div className="list-group mt-4">
-                    {quickLinks.map((link) => (
-                      <a className={styles.quickLink} href="#" key={link}>
-                        {link}
+                    {quickLinks.map(([label, href]) => (
+                      <a className={styles.quickLink} href={href} key={label}>
+                        {label}
                       </a>
                     ))}
                   </div>

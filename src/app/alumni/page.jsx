@@ -1,4 +1,4 @@
-import { SectionShell, DocumentGrid } from "../components/SectionShell";
+import { SectionShell } from "../components/SectionShell";
 import styles from "./alumniPages.module.css";
 
 const alumniLinks = [

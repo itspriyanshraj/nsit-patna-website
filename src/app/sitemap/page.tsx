@@ -34,7 +34,7 @@ const categories = [
       { label: "NSIT Clubs", href: "/institution/nsit-clubs" },
       { label: "AICTE Mandatory Disclosure", href: "/institution/aicte-mandatory-disclosure" },
       { label: "Governing Body", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/BOGPDF2026.pdf" },
-      { label: "Online Students Grivance Redressal", href: "/institution/online-students-grivance-redressal" },
+      { label: "Online Students Grievance Redressal", href: "/institution/online-students-grivance-redressal" },
     ],
   },
   {

@@ -37,7 +37,7 @@ export default function CourseOutcomesContent() {
           position: "absolute", bottom: -40, left: 80, width: 160, height: 160, borderRadius: "50%",
           background: "rgba(255,255,255,0.04)", pointerEvents: "none",
         }} />
-        <img src="https://www.nsit.in/favicon.ico" alt="NSIT" style={{
+        <img src="/images/logo-opt-v3.png" alt="NSIT" style={{
           width: 48, height: 48, borderRadius: 12,
           background: "rgba(255,255,255,0.18)", padding: 6, flexShrink: 0,
         }} />

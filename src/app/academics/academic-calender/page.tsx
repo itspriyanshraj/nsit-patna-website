@@ -50,13 +50,13 @@ function ArchiveIcon() {
   );
 }
 
-export default function AcademicCalenderPage() {
+export default function AcademicCalendarPage() {
   return (
-    <AcademicsShell activePath="/academics/academic-calender" title="Academic Calender">
+    <AcademicsShell activePath="/academics/academic-calender" title="Academic Calendar">
       <div className={styles.calendarWrap}>
 
         <div className={styles.annualBar}>
-          <h3>Annual Overview — Session 2025-26</h3>
+          <h3>Annual Overview - Session 2025-26</h3>
           <div className={styles.monthTrack}>
             {months.map((m, i) => (
               <div className={styles.monthCell} key={m}>
@@ -87,7 +87,7 @@ export default function AcademicCalenderPage() {
               <div className={styles.semIcon}>E</div>
               <div className={styles.semTitle}>
                 <h4>Even Semester</h4>
-                <small>January – June</small>
+                <small>January - June</small>
               </div>
             </div>
             <div className={styles.semBody}>

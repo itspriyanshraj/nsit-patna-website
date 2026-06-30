@@ -1,5 +1,3 @@
-import { NextResponse } from "next/server";
-
 export async function GET() {
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -31,7 +29,7 @@ export async function GET() {
 </head>
 <body>
   <div class="card">
-    <img src="/images/logo-opt.png" alt="NSIT" class="logo" />
+    <img src="/images/logo-opt-v3.png" alt="NSIT" class="logo" />
     <h1>Redirecting to Sitemap</h1>
     <p>You are being redirected to the NSIT Patna sitemap page.</p>
     <a href="/sitemap">Go to Sitemap &rarr;</a>

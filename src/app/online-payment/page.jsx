@@ -54,7 +54,7 @@ export default function OnlinePaymentPage() {
             style={{ background: "#fff" }}>
             <div className={styles.loginBox}>
               <div className="text-center mb-3">
-                <img src="/images/logo-opt.png" alt="NSIT" width="150" />
+                <img src="/images/logo-opt-v3.png" alt="NSIT" width="150" />
               </div>
 
               <h3 className={`text-center ${styles.loginTitle}`}>Sign In</h3>

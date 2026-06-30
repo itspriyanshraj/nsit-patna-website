@@ -2,24 +2,24 @@
 import styles from "./Footer.module.css";
 
 const quickLinks = [
-  "Gallery",
-  "Contact",
-  "Anti Ragging",
-  "NSIT Virtual Tour",
-  "AICTE",
-  "AKU",
-  "Dept. Of Sc. & Tech.",
-  "SBTE",
+  ["Gallery", "/infrastructure/gallery"],
+  ["Contact", "/contact"],
+  ["Anti Ragging", "/academics/students-counsellor"],
+  ["NSIT Virtual Tour", "/admission/virtual-tour"],
+  ["AICTE", "/institution/approval"],
+  ["AKU", "/institution/approval"],
+  ["Dept. Of Sc. & Tech.", "/institution/approval"],
+  ["SBTE", "/institution/approval"],
 ];
 
 const contacts = [
-  "Netaji Subhas Institute Of Technology, Amhara, Bihta, Patna - 801118",
-  "9102403265",
-  "www.nsit.in",
-  "info@nsit.in",
-  "deanadmin@nsiterp.in",
-  "deanadministration@nsiterp.in",
-  "tpo@nsit.in",
+  ["Netaji Subhas Institute Of Technology, Amhara, Bihta, Patna - 801118", "https://maps.google.com/?q=Netaji%20Subhas%20Institute%20Of%20Technology%20Amhara%20Bihta%20Patna"],
+  ["9102403265", "tel:9102403265"],
+  ["www.nsit.in", "https://www.nsit.in"],
+  ["info@nsit.in", "mailto:info@nsit.in"],
+  ["deanadmin@nsiterp.in", "mailto:deanadmin@nsiterp.in"],
+  ["deanadministration@nsiterp.in", "mailto:deanadministration@nsiterp.in"],
+  ["tpo@nsit.in", "mailto:tpo@nsit.in"],
 ];
 
 export default function Footer() {
@@ -31,7 +31,7 @@ export default function Footer() {
             <span className="d-block mb-1 text-uppercase" style={{ color: "var(--main-color)", fontSize: 12, fontWeight: 800 }}>Admissions & Campus Support</span>
             <h2 className={`${styles.ctaPanelH2} text-white`}>Start your NSIT journey with the right information.</h2>
           </div>
-          <a href="#" className="d-inline-flex align-items-center justify-content-center gap-2 text-white fw-bolder text-nowrap" style={{ minHeight: 50, padding: "0 16px 0 7px", background: "var(--main-color)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, boxShadow: "0 16px 30px rgba(237,28,36,0.24)" }}>
+          <a href="/enquiry" className="d-inline-flex align-items-center justify-content-center gap-2 text-white fw-bolder text-nowrap" style={{ minHeight: 50, padding: "0 16px 0 7px", background: "var(--main-color)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, boxShadow: "0 16px 30px rgba(237,28,36,0.24)" }}>
             <span style={{ width: 32, height: 32, display: "grid", placeItems: "center", color: "var(--main-color)", background: "var(--white-color)", borderRadius: 7 }}>✉</span>
             Send Enquiry
             <span style={{ transition: "transform 180ms ease" }}>→</span>
@@ -41,7 +41,7 @@ export default function Footer() {
         <div className={`${styles.footerGrid} mt-4`}>
           <section className={`${styles.brandBlock} d-grid`} style={{ gridTemplateColumns: "92px 1fr", gap: 18 }}>
             <Image
-              src="/images/logo-opt.png"
+              src="/images/logo-opt-v3.png"
               alt="Netaji Subhas Institute of Technology logo"
               width={92}
               height={92}
@@ -56,8 +56,8 @@ export default function Footer() {
           <section>
             <h3 className="text-white mb-3" style={{ fontSize: 20, lineHeight: 1.2 }}>Quick Links</h3>
             <div className={`${styles.linkList} d-grid`} style={{ gap: 10 }}>
-              {quickLinks.map((link) => (
-                <a href="#" key={link} className="w-fit-content" style={{ color: "var(--muted-light-text-color)", fontSize: 15, lineHeight: 1.75, transition: "color 180ms ease, transform 180ms ease" }}>{link}</a>
+              {quickLinks.map(([label, href]) => (
+                <a href={href} key={label} className="w-fit-content" style={{ color: "var(--muted-light-text-color)", fontSize: 15, lineHeight: 1.75, transition: "color 180ms ease, transform 180ms ease" }}>{label}</a>
               ))}
             </div>
           </section>
@@ -65,8 +65,8 @@ export default function Footer() {
           <section>
             <h3 className="text-white mb-3" style={{ fontSize: 20, lineHeight: 1.2 }}>Contact Desk</h3>
             <div className={`${styles.contactList} d-grid`} style={{ gap: 10 }}>
-              {contacts.map((item) => (
-                <a href={item.includes("@") ? `mailto:${item}` : "#"} key={item} className="w-fit-content" style={{ color: "var(--muted-light-text-color)", fontSize: 15, lineHeight: 1.75, transition: "color 180ms ease, transform 180ms ease" }}>{item}</a>
+              {contacts.map(([label, href]) => (
+                <a href={href} key={label} className="w-fit-content" style={{ color: "var(--muted-light-text-color)", fontSize: 15, lineHeight: 1.75, transition: "color 180ms ease, transform 180ms ease" }}>{label}</a>
               ))}
             </div>
           </section>

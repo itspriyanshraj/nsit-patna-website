@@ -12,7 +12,7 @@ const institutionLinks = [
   ["NSIT Clubs", "/institution/nsit-clubs"],
   ["AICTE Mandatory Disclosure", "/institution/aicte-mandatory-disclosure"],
   ["Governing Body", "/institution/governing-body"],
-  ["Online Students Grivance Redressal", "/institution/online-students-grivance-redressal"],
+  ["Online Students Grievance Redressal", "/institution/online-students-grivance-redressal"],
 ];
 
 export const whyNsit =
