@@ -905,6 +905,10 @@
   .enquiryButton {
     padding: 0 12px;
   }
+
+  .navShell {
+    display: none !important;
+  }
 }
 
 @media (max-width: 640px) {
