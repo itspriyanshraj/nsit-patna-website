@@ -1,4 +1,5 @@
 import { SectionShell } from "../../components/SectionShell";
+import { HiBellAlert, HiBookOpen, HiStar, HiAcademicCap } from "react-icons/hi2";
 
 const admissionLinks = [
   ["Why Choose NSIT?", "/admission/why-choose"],
@@ -10,10 +11,10 @@ const admissionLinks = [
 ];
 
 const quickStats = [
-  { icon: "🎯", value: "70-80%", label: "Placement Rate" },
-  { icon: "📚", value: "70,000+", label: "Books in Library" },
-  { icon: "🏆", value: "₹10 LPA+", label: "Top Salary Package" },
-  { icon: "🎓", value: "1:1", label: "Mentorship Ratio" },
+  { icon: <HiBellAlert />, value: "70-80%", label: "Placement Rate" },
+  { icon: <HiBookOpen />, value: "70,000+", label: "Books in Library" },
+  { icon: <HiStar />, value: "₹10 LPA+", label: "Top Salary Package" },
+  { icon: <HiAcademicCap />, value: "1:1", label: "Mentorship Ratio" },
 ];
 
 const sections = [
@@ -136,7 +137,7 @@ export default function Page() {
               borderRadius: 10, padding: "20px", textAlign: "center",
               boxShadow: "0 4px 14px rgba(23,32,51,0.06)",
             }}>
-              <span style={{ fontSize: 32 }}>{s.icon}</span>
+              <span style={{ fontSize: 32, color: "var(--main-color)" }}>{s.icon}</span>
               <div style={{ fontSize: 22, fontWeight: 900, color: "var(--main-color)", marginTop: 6 }}>{s.value}</div>
               <div style={{ fontSize: 13, fontWeight: 600, color: "var(--para-color)" }}>{s.label}</div>
             </div>
@@ -151,7 +152,7 @@ export default function Page() {
               borderLeft: "4px solid var(--main-color)",
               boxShadow: "0 4px 16px rgba(23,32,51,0.05)",
             }}>
-              <h3 style={{ margin: "0 0 12px", fontSize: 17, fontWeight: 850, color: "#14213d" }}>{sec.title}</h3>
+              <h3 style={{ margin: "0 0 12px", fontSize: 17, fontWeight: 600, color: "#14213d" }}>{sec.title}</h3>
               <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 6 }}>
                 {sec.items.map((item) => (
                   <li key={item} style={{ display: "flex", gap: 10, fontSize: 14, fontWeight: 600, lineHeight: 1.6, color: "var(--para-color)" }}>

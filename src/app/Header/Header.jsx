@@ -17,53 +17,49 @@ const recognitions = [
 
 function DropdownItems({ items, level = 0, onClose }) {
   const [activeIndex, setActiveIndex] = useState(null);
+  const panelClass =
+    level === 0 ? styles.dropdown : level === 1 ? styles.subDropdown : styles.subDropdown2;
 
-  if (level === 1) {
-    const activeItem = activeIndex !== null ? items[activeIndex] : null;
+  return (
+    <div className={panelClass}>
+      {items.map((item, idx) => {
+        const isExternal = item.external || /^https?:\/\//.test(item.href || "");
+        const opensNewTab = isExternal || item.href?.endsWith(".pdf");
 
-    return (
-      <div className={styles.subDropdown} onMouseLeave={() => setActiveIndex(null)}>
-        {items.map((item, idx) => (
+        return (
           <div
             className={styles.dropdownItem}
             key={item.label}
-            onMouseEnter={() => item.items ? setActiveIndex(idx) : setActiveIndex(null)}
+            onMouseEnter={() => {
+              if (item.items) setActiveIndex(idx);
+              else setActiveIndex(null);
+            }}
+            onMouseLeave={() => {
+              setActiveIndex(null);
+            }}
           >
-            <a className={item.items ? styles.dropdownTrigger : undefined} href={item.href || "#"} target={item.href?.endsWith('.pdf') ? '_blank' : undefined} rel={item.href?.endsWith('.pdf') ? 'noreferrer' : undefined}>
+            <a
+              className={item.items ? styles.dropdownTrigger : undefined}
+              href={item.href || "#"}
+              onClick={(e) => {
+                if (item.items) {
+                  e.preventDefault();
+                } else {
+                  onClose?.();
+                }
+              }}
+              target={opensNewTab ? "_blank" : undefined}
+              rel={opensNewTab ? "noreferrer" : undefined}
+            >
               <span>{item.label}</span>
               {item.items ? <span aria-hidden="true" className={styles.submenuArrow}>{"\u25B8"}</span> : null}
             </a>
+            {item.items && idx === activeIndex && (
+              <DropdownItems items={item.items} level={level + 1} onClose={onClose} />
+            )}
           </div>
-        ))}
-        {activeItem?.items && (
-          <div className={`${styles.subDropdown2} ${styles.subDropdown2Visible}`}>
-            {activeItem.items.map((sub) => (
-              <div className={styles.dropdownItem} key={sub.label}>
-                <a href={sub.href || "#"} target={sub.href?.endsWith('.pdf') ? '_blank' : undefined} rel={sub.href?.endsWith('.pdf') ? 'noreferrer' : undefined}>
-                  <span>{sub.label}</span>
-                </a>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  return (
-    <div className={level === 0 ? styles.dropdown : styles.subDropdown2}>
-      {items.map((item) => (
-        <div className={styles.dropdownItem} key={item.label}>
-          <a
-            className={item.items ? styles.dropdownTrigger : undefined}
-            href={item.href || "#"}
-          >
-            <span>{item.label}</span>
-            {item.items ? <span aria-hidden="true" className={styles.submenuArrow}>{"\u25B8"}</span> : null}
-          </a>
-          {item.items ? <DropdownItems items={item.items} level={level + 1} onClose={onClose} /> : null}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
@@ -79,18 +75,18 @@ export default function Header() {
     <>
       <header className={styles.header}>
       <div className={styles.topStrip}>
-        <div className={`${styles.inner} d-flex align-items-center justify-content-between`} style={{ gap: 24, minHeight: 38, fontSize: 14 }}>
-          <div className="d-flex align-items-center flex-wrap gap-3" style={{ padding: 12 }}>
+        <div className={styles.inner}>
+          <div className={styles.contactGroup}>
             <a href="mailto:info@nsit.in" className={styles.contactEmail}>info@nsit.in</a>
             <span className={styles.contactPhone}>7781020349, 7781020359, 9102403261</span>
           </div>
-          <div className="d-flex align-items-center flex-wrap gap-3" style={{ padding: 12 }}>
-            <a href="/online-payment" target="_blank" rel="noopener noreferrer" className={styles.paymentLink} style={{ cursor: "pointer", fontFamily: "inherit" }}>
-              <span aria-hidden="true">₹</span>
+          <div className={styles.loginGroup}>
+            <a href="/online-payment" target="_blank" rel="noopener noreferrer" className={styles.paymentLink} style={{ cursor: "pointer", fontFamily: "inherit" }} onClick={handleClose}>
+              <span aria-hidden="true">{"\u20B9"}</span>
               Online Payment
             </a>
-            <a href="/teacher-login" target="_blank" rel="noopener noreferrer" className={styles.loginLink}>
-              <span aria-hidden="true">↗</span>
+            <a href="/teacher-login" target="_blank" rel="noopener noreferrer" className={styles.loginLink} onClick={handleClose}>
+              <span aria-hidden="true">{"\u2197"}</span>
               Teacher Login
             </a>
           </div>
@@ -99,13 +95,13 @@ export default function Header() {
 
       <div className={styles.identityBand}>
         <div className={`${styles.inner} ${styles.identityGrid}`}>
-          <a className={`${styles.brand} d-flex align-items-center`} style={{ gap: 16 }} href="/" aria-label="NSIT home">
+          <Link className={`${styles.brand} d-flex align-items-center`} style={{ gap: 16 }} href="/" aria-label="NSIT home">
             <Image src="/images/logo-opt-v3.png" alt="NSIT logo" width={82} height={82} priority className={styles.brandLogo} />
             <span className={styles.brandText}>
               <strong>Netaji Subhas Institute of Technology</strong>
               <small>Amhara, Bihta, Patna - 801118</small>
             </span>
-          </a>
+          </Link>
 
           <div className={styles.logoScroller} aria-label="Institute recognitions">
             <div className={styles.logoTrack}>

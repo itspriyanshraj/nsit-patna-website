@@ -1,3 +1,5 @@
+import { HiBriefcase } from "react-icons/hi2";
+
 export const metadata = {
   title: "Career | NSIT Patna",
 };
@@ -31,24 +33,24 @@ export default function CareerPage() {
           {jobOpenings.map((job, i) => (
             <div key={i} className="row" style={{background:'#fff', border:'1px solid var(--border-color)', borderRadius:12, padding:32, boxShadow:'0 18px 42px rgba(23,32,51,0.08)', gap:0}}>
               <div className="col-lg" style={{padding:0}}>
-                <div style={{width:56, height:56, display:'grid', placeItems:'center', background:'#fff5f6', borderRadius:10, marginBottom:16, fontSize:24, border:'2px solid rgba(247,32,57,0.12)'}}>💼</div>
-                <h3 style={{margin:'0 0 20px', color:'#14213d', fontSize:20, fontWeight:850}}>{job.title}</h3>
+                <div style={{width:56, height:56, display:'grid', placeItems:'center', background:'#fff5f6', borderRadius:10, marginBottom:16, fontSize:24, border:'2px solid rgba(247,32,57,0.12)', color:'var(--main-color)'}}><HiBriefcase /></div>
+                <h3 style={{margin:'0 0 20px', color:'#14213d', fontSize:20, fontWeight:600}}>{job.title}</h3>
                 <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(220px, 1fr))', gap:'14px 28px'}}>
                   <div>
                     <span style={{color:'#888', fontSize:12, fontWeight:950, letterSpacing:'0.04em', textTransform:'uppercase'}}>No. Of Post</span>
-                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:800}}>{job.posts}</p>
+                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:600}}>{job.posts}</p>
                   </div>
                   <div>
                     <span style={{color:'#888', fontSize:12, fontWeight:950, letterSpacing:'0.04em', textTransform:'uppercase'}}>Qualification</span>
-                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:800}}>{job.qualification}</p>
+                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:600}}>{job.qualification}</p>
                   </div>
                   <div>
                     <span style={{color:'#888', fontSize:12, fontWeight:950, letterSpacing:'0.04em', textTransform:'uppercase'}}>Experience</span>
-                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:800}}>{job.experience}</p>
+                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:600}}>{job.experience}</p>
                   </div>
                   <div>
                     <span style={{color:'#888', fontSize:12, fontWeight:950, letterSpacing:'0.04em', textTransform:'uppercase'}}>Remarks</span>
-                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:800}}>{job.remarks}</p>
+                    <p style={{margin:'4px 0 0', color:'#14213d', fontSize:16, fontWeight:600}}>{job.remarks}</p>
                   </div>
                 </div>
               </div>
@@ -67,7 +69,7 @@ export default function CareerPage() {
         </div>
 
         <div style={{marginTop:48, padding:32, background:'linear-gradient(135deg, rgba(247,32,57,0.06), transparent 52%), #fff', border:'1px solid var(--border-color)', borderRadius:12, boxShadow:'0 18px 42px rgba(23,32,51,0.08)'}}>
-          <h4 style={{margin:'0 0 6px', color:'#14213d', fontSize:18, fontWeight:850}}>Send Your Application</h4>
+          <h4 style={{margin:'0 0 6px', color:'#14213d', fontSize:18, fontWeight:600}}>Send Your Application</h4>
           <p style={{margin:'0 0 14px', color:'#6c757d', fontSize:14, fontWeight:500}}>
             Interested candidates may send their CV and relevant documents to the HR department.
           </p>

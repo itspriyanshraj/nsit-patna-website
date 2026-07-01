@@ -1,4 +1,5 @@
 import { SectionShell } from "../../components/SectionShell";
+import { HiCog, HiWrench, HiBookOpen } from "react-icons/hi2";
 
 const admissionLinks = [
   ["Why Choose NSIT?", "/admission/why-choose"],
@@ -11,7 +12,7 @@ const admissionLinks = [
 
 const programs = [
   {
-    title: "B.Tech Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: "⚙",
+    title: "B.Tech Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: <HiCog />,
     items: [
       "10+2 with Physics and Mathematics as compulsory subjects",
       "One of: Chemistry, Computer Science, Electronics, IT, Biology, or Biotechnology",
@@ -20,7 +21,7 @@ const programs = [
     ],
   },
   {
-    title: "Diploma Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: "🔧",
+    title: "Diploma Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: <HiWrench />,
     items: [
       "Passed 10th standard (Matriculation) from a recognised board",
       "Minimum 35% marks in aggregate",
@@ -28,7 +29,7 @@ const programs = [
     ],
   },
   {
-    title: "BCA & BBA Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: "📘",
+    title: "BCA & BBA Programmes", color: "var(--main-color)", bg: "#fef2f2", icon: <HiBookOpen />,
     items: [
       "10+2 from a recognised board in any stream",
       "Minimum 45% marks in aggregate (40% for reserved categories)",
@@ -69,7 +70,7 @@ export default function Page() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: 24, color: '#fff', marginBottom: 16,
             }}>{p.icon}</div>
-            <h3 style={{ margin: 0, color: '#14213d', fontSize: 20, fontWeight: 850 }}>{p.title}</h3>
+            <h3 style={{ margin: 0, color: '#14213d', fontSize: 20, fontWeight: 600 }}>{p.title}</h3>
             <ul style={{ margin: '14px 0 0', padding: '0 0 0 18px', listStyle: 'none' }}>
               {p.items.map((item, i) => (
                 <li key={i} style={{

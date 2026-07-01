@@ -49,6 +49,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://www.nsit.in" />
+        <link rel="preconnect" href="https://cdn.academist.app" />
+        <link rel="preconnect" href="https://cdn.dotplus.in" />
+      </head>
       <body>
         <Header />
         {children}

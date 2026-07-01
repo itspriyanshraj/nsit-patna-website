@@ -1,20 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./popupModal.module.css";
 
+const HIDDEN_ROUTES = ["/online-payment", "/teacher-login"];
+
 export default function PopupModal() {
   const [visible, setVisible] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const shown = sessionStorage.getItem("popupShown");
+    if (HIDDEN_ROUTES.includes(pathname)) return;
+    const shown = localStorage.getItem("popupShown");
     if (shown) return;
-    sessionStorage.setItem("popupShown", "true");
+    localStorage.setItem("popupShown", "true");
     const timer = setTimeout(() => setVisible(true), 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   const handleClose = () => {
     setVisible(false);

@@ -1,50 +1,109 @@
-export const metadata = {
-  title: "Feedback & Suggestions",
-  description: "Share your feedback with NSIT Patna. Submit student feedback, alumni feedback, parents feedback, teacher feedback, or satisfaction survey responses.",
-};
+"use client";
+
+import { HiArrowRight, HiAcademicCap, HiUsers, HiUserGroup, HiClipboardDocumentCheck } from "react-icons/hi2";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const feedbackTypes = [
-  { title: "Students Feedback", href: "/feedback/student", icon: "🎓" },
-  { title: "Alumni Feedback", href: "/feedback/alumni", icon: "⭐" },
-  { title: "Parents Feedback", href: "/feedback/parents", icon: "👨‍👩‍👧‍👦" },
-  { title: "Teachers Feedback", href: "/feedback/teacher", icon: "📚" },
-  { title: "Students Satisfaction Survey Feedback", href: "/feedback/satisfaction-survey", icon: "📋" },
+  { title: "Students Feedback", href: "/feedback/student", icon: <HiAcademicCap /> },
+  { title: "Alumni Feedback", href: "/feedback/alumni", icon: <HiUsers /> },
+  { title: "Parents Feedback", href: "/feedback/parents", icon: <HiUserGroup /> },
+  { title: "Teachers Feedback", href: "/feedback/teacher", icon: <HiUserGroup /> },
+  { title: "Students Satisfaction Survey Feedback", href: "/feedback/satisfaction-survey", icon: <HiClipboardDocumentCheck /> },
 ];
 
 export default function FeedbackPage() {
   return (
-    <main>
-      <section style={{position:'relative', overflow:'hidden', background:'linear-gradient(135deg, rgba(247,32,57,0.08), transparent 42%), linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%)', borderBottom:'1px solid var(--border-color)'}}>
-        <div style={{position:'relative', zIndex:1, width:'min(1320px, calc(100% - 48px))', margin:'0 auto', padding:'42px 0 48px'}}>
-          <h1 className="mb-2" style={{maxWidth:900, margin:'14px 0 0', color:'#071225', fontSize:'clamp(38px, 5vw, 64px)', lineHeight:1.02}}>Feedback</h1>
+    <main style={{ color: "var(--heading-color)", background: "var(--bg-color)" }}>
+      <section style={{
+        position: "relative", minHeight: "auto", overflow: "hidden",
+        color: "var(--heading-color)",
+        background: "linear-gradient(135deg, rgba(247, 32, 57, 0.08), transparent 42%), linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%)",
+        borderBottom: "1px solid var(--border-color)",
+      }}>
+        <div style={{
+          position: "relative", zIndex: 1,
+          width: "min(1320px, calc(100% - 48px))",
+          margin: "0 auto", padding: "42px 0 48px",
+        }}>
+          <h1 className="mb-2" style={{
+            maxWidth: 900, margin: "14px 0 0",
+            color: "#071225", fontSize: "clamp(38px, 5vw, 64px)",
+            lineHeight: 1.02, letterSpacing: 0,
+          }}>Feedback</h1>
+          <Breadcrumbs section="Feedback" title="Feedback" />
         </div>
       </section>
 
-      <style>{`
-        .feedback-card { background: #fff; border: 1px solid var(--border-color); border-radius: 12px; padding: 36px 24px; text-align: center; box-shadow: 0 18px 42px rgba(23,32,51,0.08); transition: transform 200ms ease, box-shadow 200ms ease; cursor: pointer; text-decoration: none; display: block; }
-        .feedback-card:hover { transform: translateY(-6px); box-shadow: 0 24px 52px rgba(23,32,51,0.15); }
-        .feedback-icon { width: 64px; height: 64px; border-radius: 50%; background: #fff5f6; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 26px; border: 2px solid rgba(247,32,57,0.12); }
-        .feedback-title { margin: 16px 0 0; font-size: 17px; font-weight: 950; color: #14213d; }
-        .feedback-cta { margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--main-color); font-size: 13px; font-weight: 950; text-transform: uppercase; letter-spacing: 0.05em; }
-      `}</style>
-
-      <section style={{width:'min(1160px, calc(100% - 48px))', margin:'0 auto', padding:'76px 0 92px'}}>
-        <div style={{marginBottom:32}}>
-          <span style={{color:'var(--main-color)', fontSize:12, fontWeight:950, letterSpacing:'0.08em', textTransform:'uppercase'}}>Feedback Forms</span>
-          <h2 style={{margin:'8px 0 0', color:'#14213d', fontSize:'clamp(24px,3vw,36px)'}}>Choose a Feedback Type</h2>
+      <section style={{
+        width: "min(1320px, calc(100% - 48px))",
+        margin: "0 auto", padding: "60px 0 92px",
+      }}>
+        <div style={{ marginBottom: 36 }}>
+          <span style={{
+            color: "var(--main-color)", fontSize: 12, fontWeight: 950,
+            letterSpacing: "0.08em", textTransform: "uppercase",
+          }}>Feedback Forms</span>
+          <h2 style={{
+            margin: "8px 0 0", color: "#14213d",
+            fontSize: "clamp(26px, 3vw, 40px)", lineHeight: 1.15,
+          }}>Choose a Feedback Type</h2>
         </div>
-        <div className="row" style={{gap:20, justifyContent:'center'}}>
+
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+          gap: 18,
+        }}>
           {feedbackTypes.map((item) => (
-            <div key={item.title} className="col-lg" style={{flex:'1 1 200px', maxWidth:280, minWidth:200}}>
-              <a href={item.href} className="feedback-card">
-                <div className="feedback-icon">{item.icon}</div>
-                <h3 className="feedback-title">{item.title}</h3>
-                <div className="feedback-cta">
-                  <span>Give Feedback</span>
-                  <span style={{fontSize:14}}>→</span>
-                </div>
-              </a>
-            </div>
+            <a
+              key={item.title}
+              href={item.href}
+              style={{
+                display: "block", textDecoration: "none", borderRadius: 14,
+                padding: "28px 22px", background: "rgba(247, 32, 57, 0.04)",
+                border: "2px solid transparent",
+                transition: "all .25s ease",
+                position: "relative", overflow: "hidden",
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "var(--main-color)";
+                e.currentTarget.style.transform = "translateY(-4px)";
+                e.currentTarget.style.boxShadow = "0 12px 28px -8px rgba(247, 32, 57, 0.5)";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "transparent";
+                e.currentTarget.style.transform = "none";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+            >
+              <div style={{
+                width: 52, height: 52, borderRadius: 12,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                background: "var(--main-color)", color: "#fff",
+                fontSize: 22, marginBottom: 18,
+                boxShadow: "0 4px 12px rgba(247, 32, 57, 0.4)",
+              }}>
+                {item.icon}
+              </div>
+              <h3 style={{
+                margin: 0, fontSize: 16, fontWeight: 600,
+                color: "var(--heading-color)", lineHeight: 1.3,
+              }}>{item.title}</h3>
+              <div style={{
+                marginTop: 16, display: "flex", alignItems: "center",
+                gap: 8, color: "var(--main-color)", fontSize: 13,
+                fontWeight: 600, textTransform: "uppercase",
+                letterSpacing: "0.05em",
+              }}>
+                <span>Give Feedback</span>
+                <HiArrowRight style={{ fontSize: 12 }} />
+              </div>
+              <div style={{
+                position: "absolute", top: -20, right: -20,
+                width: 80, height: 80, borderRadius: "50%",
+                background: "rgba(247, 32, 57, 0.05)", pointerEvents: "none",
+              }} />
+            </a>
           ))}
         </div>
       </section>

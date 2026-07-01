@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaMoneyBillWave, FaBook, FaFileInvoiceDollar, FaBus, FaHotel, FaTshirt, FaCheckCircle } from "react-icons/fa";
+import { HiCurrencyDollar, HiBookOpen, HiDocumentText, HiTruck, HiHome, HiUser, HiCheckCircle } from "react-icons/hi2";
 
 const feeData = [
   {
-    icon: FaMoneyBillWave,
+    icon: HiCurrencyDollar,
     title: "Admission Fee (Non-Refundable, One-time)",
     rows: [
       { label: "Diploma", value: "₹ 5000 + ₹ 500 (BPTPIA Exam Form) = ₹ 5500" },
@@ -14,7 +14,7 @@ const feeData = [
     ],
   },
   {
-    icon: FaFileInvoiceDollar,
+    icon: HiDocumentText,
     title: "Semester Fee",
     rows: [
       { label: "Diploma", value: "₹ 30000/semester (6 semesters) = ₹ 180000" },
@@ -24,7 +24,7 @@ const feeData = [
     ],
   },
   {
-    icon: FaBook,
+    icon: HiBookOpen,
     title: "Book Bank and Stationery",
     rows: [
       { label: "", value: "₹ 1000 (approx) for book bank (all subject books to be issued and returned after semester)" },
@@ -32,7 +32,7 @@ const feeData = [
     ],
   },
   {
-    icon: FaFileInvoiceDollar,
+    icon: HiDocumentText,
     title: "Examination Fee",
     rows: [
       { label: "Registration Fee", value: "B.Tech — As per Bihar Engineering University | BBA/BCA — As per AKU | Diploma — As per SBTE" },
@@ -41,7 +41,7 @@ const feeData = [
     ],
   },
   {
-    icon: FaBus,
+    icon: HiTruck,
     title: "Transportation Fee (if required, per year)",
     routes: [
       ["Patna", "₹ 18,000"],
@@ -54,14 +54,14 @@ const feeData = [
     ],
   },
   {
-    icon: FaHotel,
+    icon: HiHome,
     title: "Hostel Facility with Mess Fee (if required, per year)",
     rows: [
       { label: "", value: "₹ 84,000 (₹ 42,000 x 2 to be paid semester wise) — Hostel to be allotted on yearly basis only" },
     ],
   },
   {
-    icon: FaTshirt,
+    icon: HiUser,
     title: "Uniform Fee",
     rows: [
       { label: "", value: "₹ 8,000 (2 Shirts, 2 Trousers, 1 Coat, 1 Tie, 1 Hoodie & 1 T-Shirt)" },
@@ -129,7 +129,7 @@ export default function FeeContent() {
               {item.rows?.map((row, i) => (
                 <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f8f9fb" }}>
                   {row.label && (
-                    <td style={{ padding: "12px 20px", color: "#14213d", fontWeight: 850, whiteSpace: "nowrap", borderBottom: "1px solid var(--border-color)", fontSize: 14 }}>{row.label}</td>
+                    <td style={{ padding: "12px 20px", color: "#14213d", fontWeight: 600, whiteSpace: "nowrap", borderBottom: "1px solid var(--border-color)", fontSize: 14 }}>{row.label}</td>
                   )}
                   <td colSpan={row.label ? 1 : 2} style={{ padding: "12px 20px", color: "var(--para-color)", fontWeight: 600, fontSize: 14, borderBottom: "1px solid var(--border-color)" }}>{row.value}</td>
                 </tr>
@@ -164,7 +164,7 @@ export default function FeeContent() {
           padding: "14px 20px", fontSize: 14, textTransform: "uppercase",
           letterSpacing: "0.06em", display: "flex", alignItems: "center", gap: 8,
         }}>
-          <FaCheckCircle style={{ fontSize: 16 }} />
+          <HiCheckCircle style={{ fontSize: 16 }} />
           Documents Required
         </div>
         <div style={{ padding: "16px 20px" }}>

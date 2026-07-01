@@ -1,4 +1,5 @@
 import { SectionShell } from "../../components/SectionShell";
+import { HiBuildingLibrary, HiPhone, HiEnvelope, HiClock } from "react-icons/hi2";
 
 const admissionLinks = [
   ["Why Choose NSIT?", "/admission/why-choose"],
@@ -10,9 +11,9 @@ const admissionLinks = [
 ];
 
 const contacts = [
-  { label: "Address", value: "Netaji Subhas Institute of Technology, Amhara, Bihta, Patna – 801118, Bihar", icon: "🏛" },
-  { label: "Phone", value: "7781020349 / 7781020359 / 9102403261", icon: "📞" },
-  { label: "Email", value: "info@nsit.in", icon: "✉" },
+  { label: "Address", value: "Netaji Subhas Institute of Technology, Amhara, Bihta, Patna – 801118, Bihar", icon: <HiBuildingLibrary /> },
+  { label: "Phone", value: "7781020349 / 7781020359 / 9102403261", icon: <HiPhone /> },
+  { label: "Email", value: "info@nsit.in", icon: <HiEnvelope /> },
 ];
 
 export const metadata = {
@@ -46,9 +47,9 @@ export default function Page() {
               width: 56, height: 56, borderRadius: 14, background: 'var(--main-color)',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: 24, color: '#fff', margin: '0 auto 14px',
-            }}>{c.icon}</div>
+            }}><span style={{ fontSize: 24 }}>{c.icon}</span></div>
             <span style={{ color: 'var(--main-color)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{c.label}</span>
-            <p style={{ margin: '8px 0 0', color: '#14213d', fontSize: 15, fontWeight: 800, lineHeight: 1.5 }}>{c.value}</p>
+            <p style={{ margin: '8px 0 0', color: '#14213d', fontSize: 15, fontWeight: 600, lineHeight: 1.5 }}>{c.value}</p>
           </div>
         ))}
       </div>
@@ -68,8 +69,8 @@ export default function Page() {
         color: '#fff',
       }}>
         <div style={{ textAlign: 'center', marginBottom: 20 }}>
-          <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, margin: '0 auto 12px' }}>🕐</div>
-          <h3 style={{ margin: 0, fontSize: 22, fontWeight: 850 }}>Admission Helpdesk</h3>
+          <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, margin: '0 auto 12px', color: '#fff' }}><HiClock /></div>
+          <h3 style={{ margin: 0, fontSize: 22, fontWeight: 600 }}>Admission Helpdesk</h3>
         </div>
         <p style={{ margin: 0, fontSize: 15, fontWeight: 600, lineHeight: 1.8, textAlign: 'center', maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
           The admission helpdesk is available Monday to Saturday, 9:00 AM to 5:00 PM.

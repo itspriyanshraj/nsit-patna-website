@@ -68,7 +68,7 @@
   padding: 0 15px 0 6px;
   color: var(--white-color);
   font-size: 15px;
-  font-weight: 800;
+  font-weight: 600;
   background: #d71920;
   border: 1px solid #d71920;
   border-radius: 7px;
@@ -165,7 +165,7 @@
 .brand small {
   color: var(--subheading-color);
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.2px;
 }
 
@@ -389,7 +389,7 @@
   overflow: visible;
   color: #111827;
   font-size: 15px;
-  font-weight: 850;
+  font-weight: 600;
   white-space: normal;
   background: transparent;
   border-bottom: 0;
@@ -411,12 +411,6 @@
 
 .dropdownItem {
   position: relative;
-}
-
-/* Inside subDropdown, items must NOT be positioning context
-   so that subDropdown2 aligns to the TOP of the panel */
-.subDropdown > .dropdownItem {
-  position: static;
 }
 
 .dropdownTrigger {
@@ -447,7 +441,8 @@
   transform: translateX(2px);
 }
 
-.subDropdown {
+.subDropdown,
+.subDropdown2 {
   position: absolute;
   top: 0;
   left: 100%;
@@ -466,7 +461,12 @@
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
-.subDropdown::before {
+.subDropdown2 {
+  z-index: 100;
+}
+
+.subDropdown::before,
+.subDropdown2::before {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -476,39 +476,7 @@
 }
 
 .dropdownItem:hover > .subDropdown,
-.dropdownItem:focus-within > .subDropdown {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-1px);
-}
-
-/* Level-2 sub-dropdown (B-Tech / Diploma branches) — opens to the RIGHT */
-.subDropdown2 {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  z-index: 96;
-  display: grid;
-  width: 300px;
-  padding: 10px 0;
-  overflow: visible;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid #e5e7eb;
-  border-radius: 0 !important;
-  box-shadow: 0 18px 36px rgba(17, 24, 39, 0.12);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(6px);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
-/* Shown via React conditional render */
-.subDropdown2Visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-1px);
-}
-
+.dropdownItem:focus-within > .subDropdown,
 .dropdownItem:hover > .subDropdown2,
 .dropdownItem:focus-within > .subDropdown2 {
   opacity: 1;
@@ -525,7 +493,7 @@
   padding: 0 12px 0 6px;
   color: var(--white-color);
   font-size: 15px;
-  font-weight: 850;
+  font-weight: 600;
   white-space: nowrap;
   background: #ed1c24;
   border: 1px solid #ed1c24;
@@ -589,7 +557,7 @@
   }
 
   .navShell {
-    display: none;
+    display: block;
   }
 
   .navShell .inner {
@@ -666,7 +634,7 @@
     min-height: 56px;
     padding: 0 18px;
     font-size: 18px;
-    font-weight: 850;
+    font-weight: 600;
     border-radius: 8px;
   }
 
@@ -876,12 +844,39 @@
 
   .topStrip .inner {
     justify-content: center;
-    padding: 9px 0;
+    padding: 10px 0;
     text-align: center;
   }
 
+  .contactGroup {
+    display: none;
+  }
+
   .loginGroup {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 360px);
     justify-content: center;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .paymentLink,
+  .loginLink {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 0 7px 0 5px;
+    font-size: 13px;
+  }
+
+  .paymentLink span,
+  .loginLink span {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
   }
 
   .brand {
@@ -909,5 +904,42 @@
 
   .enquiryButton {
     padding: 0 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topStrip .inner {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .contactGroup {
+    display: none;
+  }
+
+  .loginGroup {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(100%, 360px);
+    gap: 8px;
+    padding: 0;
+  }
+
+  .paymentLink,
+  .loginLink {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 0 7px 0 5px;
+    font-size: 13px;
+  }
+
+  .paymentLink span,
+  .loginLink span {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
   }
 }

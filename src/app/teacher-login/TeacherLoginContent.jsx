@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaUser, FaLock, FaWhatsapp, FaMobileScreen } from "react-icons/fa6";
+import { HiUser, HiLockClosed, HiChatBubbleLeft, HiDevicePhoneMobile } from "react-icons/hi2";
 
 const GREEN = "#25D366";
 
@@ -52,7 +52,7 @@ export default function TeacherLoginContent() {
       position: "relative",
     }}>
       <div style={{
-        position: "absolute", inset: 0, background: "rgba(0,0,0,0.7)", pointerEvents: "none",
+        position: "absolute", inset: 0, background: "transparent", pointerEvents: "none",
       }} />
       <div style={{
         position: "relative", zIndex: 1, width: "100%", maxWidth: 440,
@@ -63,7 +63,7 @@ export default function TeacherLoginContent() {
         }}>
           <div className="text-center mb-4">
             <img src="/images/logo-opt-v3.png" alt="NSIT" width="130" style={{ marginBottom: 12 }} />
-            <h3 style={{ fontWeight: 850, fontSize: 22, color: "#1a1a2e" }}>Teacher Login</h3>
+            <h3 style={{ fontWeight: 600, fontSize: 22, color: "#1a1a2e" }}>Teacher Login</h3>
             <p style={{ color: "#666", fontSize: 14, margin: "4px 0 0" }}>
               Sign in to access the teacher portal
             </p>
@@ -72,7 +72,7 @@ export default function TeacherLoginContent() {
           <form onSubmit={handleSignIn}>
             <div style={{ marginBottom: 18 }}>
               <label style={{ display: "block", marginBottom: 6, fontWeight: 700, fontSize: 13, color: "#333" }}>
-                <FaUser style={{ marginRight: 6, color: "var(--main-color)" }} />
+                <HiUser style={{ marginRight: 6, color: "var(--main-color)" }} />
                 Username
               </label>
               <input
@@ -92,7 +92,7 @@ export default function TeacherLoginContent() {
 
             <div style={{ marginBottom: 24 }}>
               <label style={{ display: "block", marginBottom: 6, fontWeight: 700, fontSize: 13, color: "#333" }}>
-                <FaLock style={{ marginRight: 6, color: "var(--main-color)" }} />
+                <HiLockClosed style={{ marginRight: 6, color: "var(--main-color)" }} />
                 Password
               </label>
               <input
@@ -114,7 +114,7 @@ export default function TeacherLoginContent() {
               type="submit"
               style={{
                 width: "100%", padding: "14px", borderRadius: 12, border: "none",
-                background: "var(--main-color)", color: "#fff", fontSize: 16, fontWeight: 850,
+                background: "var(--main-color)", color: "#fff", fontSize: 16, fontWeight: 600,
                 cursor: "pointer", transition: "opacity .2s",
               }}
               onMouseEnter={(e) => e.target.style.opacity = "0.9"}
@@ -142,7 +142,7 @@ export default function TeacherLoginContent() {
                   onMouseEnter={(e) => { e.target.style.background = "var(--main-color)"; e.target.style.color = "#fff"; }}
                   onMouseLeave={(e) => { e.target.style.background = "transparent"; e.target.style.color = "var(--main-color)"; }}
                 >
-                  <FaMobileScreen /> SMS
+                  <HiDevicePhoneMobile /> SMS
                 </button>
               </div>
               <div className="col-6">
@@ -158,7 +158,7 @@ export default function TeacherLoginContent() {
                   onMouseEnter={(e) => { e.target.style.background = GREEN; e.target.style.color = "#fff"; }}
                   onMouseLeave={(e) => { e.target.style.background = "transparent"; e.target.style.color = GREEN; }}
                 >
-                  <FaWhatsapp /> WhatsApp
+                  <HiChatBubbleLeft /> WhatsApp
                 </button>
               </div>
             </div>
@@ -194,9 +194,9 @@ export default function TeacherLoginContent() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 margin: "0 auto 12px", color: "#fff", fontSize: 24,
               }}>
-                {isWhatsapp ? <FaWhatsapp /> : <FaMobileScreen />}
+                {isWhatsapp ? <HiChatBubbleLeft /> : <HiDevicePhoneMobile />}
               </div>
-              <h4 style={{ fontWeight: 850, fontSize: 18, color: "#1a1a2e", margin: 0 }}>
+              <h4 style={{ fontWeight: 600, fontSize: 18, color: "#1a1a2e", margin: 0 }}>
                 {isWhatsapp ? "WhatsApp OTP" : "SMS OTP"}
               </h4>
               <p style={{ color: "#666", fontSize: 13, margin: "4px 0 0" }}>
@@ -229,7 +229,7 @@ export default function TeacherLoginContent() {
                   style={{
                     width: "100%", padding: "14px", borderRadius: 12, border: "none",
                     background: isWhatsapp ? GREEN : "var(--main-color)", color: "#fff",
-                    fontSize: 15, fontWeight: 850, cursor: "pointer",
+                    fontSize: 15, fontWeight: 600, cursor: "pointer",
                   }}
                 >
                   Send OTP
@@ -261,7 +261,7 @@ export default function TeacherLoginContent() {
                   style={{
                     width: "100%", padding: "14px", borderRadius: 12, border: "none",
                     background: isWhatsapp ? GREEN : "var(--main-color)", color: "#fff",
-                    fontSize: 15, fontWeight: 850, cursor: "pointer",
+                    fontSize: 15, fontWeight: 600, cursor: "pointer",
                   }}
                 >
                   Verify OTP

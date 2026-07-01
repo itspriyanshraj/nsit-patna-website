@@ -3,18 +3,18 @@ export const navItems = [
   {
     label: "The Institute",
     items: [
-      { label: "About Us", href: "/institution/about-us" },
+      { label: "About Us", href: "/about-us" },
       {
         label: "Message",
-        href: "/institution/message",
+        href: "/seceretary-desk",
         items: [
-          { label: "Member Secretary", href: "/institution/message/member-secretary" },
-          { label: "Director's Message", href: "/institution/message/director-message" },
-          { label: "Principal's Message", href: "/institution/message/principal-message" },
-          { label: "Dean Administration", href: "/institution/message/dean-administration" },
+          { label: "Member Secretary", href: "/seceretary-desk" },
+          { label: "Director's Message", href: "/director" },
+          { label: "Principal's Message", href: "/principal" },
+          { label: "Dean Administration", href: "/dean-administration" },
         ],
       },
-      { label: "Vision & Mission", href: "/institution/vision-mission" },
+      { label: "Vision & Mission", href: "/vision-mission" },
       {
         label: "Statutory Committees",
         href: "/institution/statutory-committees",
@@ -45,10 +45,10 @@ export const navItems = [
       },
       {
         label: "Approval",
-        href: "/institution/approval",
+        href: "/approval/aicte_approval",
         items: [
-          { label: "AICTE Approval", href: "/institution/approval" },
-          { label: "SBTE Affiliation", href: "/institution/approval" },
+          { label: "AICTE Approval", href: "/approval/aicte_approval" },
+          { label: "SBTE Affiliation", href: "/approval/aicte_approval" },
         ],
       },
       {
@@ -71,7 +71,7 @@ export const navItems = [
         ],
       },
       { label: "Governing Body", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Academics/BOGPDF2026.pdf", external: true },
-      { label: "Online Students Grievance Redressal", href: "/institution/online-students-grivance-redressal" },
+      { label: "Online Students Grievance Redressal", href: "/onlinesgrs" },
     ],
   },
   {
@@ -109,21 +109,21 @@ export const navItems = [
         href: "/academics/syllabus",
         items: [{ label: "B-Tech" }, { label: "Diploma" }, { label: "BCA" }, { label: "BBA" }],
       },
-      { label: "Examination", href: "/academics/examination" },
-      { label: "Academic Calendar", href: "/academics/academic-calender" },
-      { label: "Course Outcomes", href: "/academics/course-outcomes" },
-      { label: "Activity Reports", href: "/academics/activity-reports" },
+      { label: "Examination", href: "/examination" },
+      { label: "Academic Calendar", href: "/academic_calender" },
+      { label: "Course Outcomes", href: "/courseoutcomes" },
+      { label: "Activity Reports", href: "/activity-reports" },
       { label: "Student's Counsellor", href: "/academics/students-counsellor" },
-      { label: "NAAC", href: "/academics/naac" },
-      { label: "DVV", href: "/academics/dvv" },
-      { label: "AQAR", href: "/academics/aqar" },
+      { label: "NAAC", href: "/naac" },
+      { label: "DVV", href: "/dvv" },
+      { label: "AQAR", href: "/aqar" },
     ],
   },
   {
     label: "Alumni Association",
     items: [
       { label: "NSIT Alumni Association", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Notice/NSITAACBylaws.pdf", external: true },
-      { label: "Vision Mission", href: "/alumni/vision-mission" },
+      { label: "Vision Mission", href: "/alumini_vision_mission" },
       { label: "Executive Committee", href: "https://cdn.academist.app/Cloud/cdnclg/8/Website/Notice/ExecutiveCommittee.pdf", external: true },
     ],
   },
@@ -131,28 +131,28 @@ export const navItems = [
     label: "Admission",
     href: "/admission",
     items: [
-      { label: "Why Choose NSIT?", href: "/admission/why-choose" },
+      { label: "Why Choose NSIT?", href: "/why-Choose-us" },
       { label: "Prospectus", href: "/admission/prospectus" },
-      { label: "Fee Structure", href: "/admission/fee-structure" },
-      { label: "Eligibility Criteria", href: "/admission/eligibility" },
-      { label: "Virtual Tour", href: "/admission/virtual-tour" },
-      { label: "Contact Details", href: "/admission/contact-details" },
+      { label: "Fee Structure", href: "/feestructure" },
+      { label: "Eligibility Criteria", href: "/eligibilitycriteria" },
+      { label: "Virtual Tour", href: "/tour" },
+      { label: "Contact Details", href: "/contactdetails" },
     ],
   },
   {
     label: "Placement",
     href: "/placement",
     items: [
-      { label: "About T & P", href: "/placement/about" },
-      { label: "Placement Statistics", href: "/placement/statistics" },
-      { label: "Our Recruiters", href: "/placement/recruiters" },
+      { label: "About T & P", href: "/about-traing-placement" },
+      { label: "Placement Statistics", href: "/placement-statistics" },
+      { label: "Our Recruiters", href: "/our-recruiters" },
     ],
   },
   {
     label: "Infrastructure",
     href: "/infrastructure",
     items: [
-      { label: "Library", href: "/infrastructure/library" },
+      { label: "Library", href: "/library-details" },
       { label: "Computing Resource", href: "/infrastructure/computing" },
       { label: "Lab", href: "/infrastructure/lab" },
       { label: "Classroom", href: "/infrastructure/classroom" },
@@ -166,5 +166,5 @@ export const navItems = [
   { label: "Feedback", href: "/feedback" },
   { label: "Career", href: "/career" },
 
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];

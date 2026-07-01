@@ -23,10 +23,10 @@ export default function AboutTPPage() {
     <SectionShell section="Placement" activePath="/placement/about" title="About T &amp; P" links={placementLinks}>
       <div style={{
         borderRadius: 16, overflow: 'hidden',
-        background: 'linear-gradient(135deg, #14213d 0%, #1f305a 100%)',
+        background: 'linear-gradient(135deg, var(--button-bg) 0%, #b01419 100%)',
         padding: 'clamp(32px,4vw,56px)',
       }}>
-        <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Training &amp; Placement Cell</span>
+        <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 950, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Training &amp; Placement Cell</span>
         <h2 style={{ margin: '8px 0 0', fontSize: 'clamp(28px,3.5vw,42px)', lineHeight: 1.1, fontWeight: 900, color: '#fff' }}>About Training &amp; Placement</h2>
         <p style={{ marginTop: 10, color: 'rgba(255,255,255,0.65)', fontSize: 15, fontWeight: 500, maxWidth: 640, lineHeight: 1.6 }}>
           A bridge between you and your first job — fostering collaboration with industry for breakthrough discoveries and continuous innovation.
@@ -35,7 +35,7 @@ export default function AboutTPPage() {
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, alignItems: 'center', marginTop: 28 }}>
         <div style={{ flex: '1 1 300px' }}>
-          <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 850, margin: 0 }}>A Bridge between you and your first job</h3>
+          <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 600, margin: 0 }}>A Bridge between you and your first job</h3>
           <p style={{ marginTop: 12, color: 'var(--para-color)', fontSize: 15, fontWeight: 500, lineHeight: 1.8 }}>
             Welcome to the Training and Placement Cell of Netaji Subhas Institute of Technology. At Training and Placement Cell, we foster a climate where collaboration with industry thrives, generating breakthrough discoveries that can support continuous innovation and growth.
           </p>
@@ -50,7 +50,7 @@ export default function AboutTPPage() {
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 32, alignItems: 'center', marginTop: 40, flexDirection: 'row-reverse' }}>
         <div style={{ flex: '1 1 300px' }}>
-          <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 850, margin: 0 }}>Activities Under Training &amp; Placement Office</h3>
+          <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 600, margin: 0 }}>Activities Under Training &amp; Placement Office</h3>
           <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 14 }}>
             <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 10, padding: '14px 18px' }}>
               <strong style={{ color: '#14213d', fontSize: 14 }}>JOB PLACEMENTS :</strong>
@@ -79,7 +79,7 @@ export default function AboutTPPage() {
 
       <div style={{ marginTop: 40, borderRadius: 14, border: '1px solid var(--border-color)', overflow: 'hidden', background: '#fff' }}>
         <div style={{ background: 'linear-gradient(135deg, #14213d 0%, #1f305a 100%)', color: '#fff', padding: '20px 24px' }}>
-          <h3 style={{ color: '#fff', fontSize: 20, fontWeight: 850, margin: 0 }}>Rojgar Utsav-2015</h3>
+          <h3 style={{ color: '#fff', fontSize: 20, fontWeight: 600, margin: 0 }}>Rojgar Utsav-2015</h3>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, padding: 24 }}>
           <div style={{ flex: '0 0 auto', borderRadius: 12, overflow: 'hidden', width: 'clamp(200px,25vw,340px)' }}>
@@ -97,11 +97,11 @@ export default function AboutTPPage() {
       </div>
 
       <div style={{ marginTop: 40 }}>
-        <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 850, margin: '0 0 6px' }}>NSIT Flagship Training Program</h3>
+        <h3 style={{ color: '#14213d', fontSize: 22, fontWeight: 600, margin: '0 0 6px' }}>NSIT Flagship Training Program</h3>
         <p style={{ color: 'var(--para-color)', fontSize: 15, fontWeight: 500, lineHeight: 1.8, margin: 0 }}>
           This Flagship Training programme is a cluster of well researched and oriented training modules. These modules are aimed at enhancing the employability of the enrolled students. The modules are designed to cater the needs of students from various academic backgrounds and take them on a common platform of employability test.
         </p>
-        <p style={{ color: '#14213d', fontSize: 15, fontWeight: 850, marginTop: 16 }}>The complete programme is divided into 5 different sets:</p>
+        <p style={{ color: '#14213d', fontSize: 15, fontWeight: 600, marginTop: 16 }}>The complete programme is divided into 5 different sets:</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 10, marginTop: 12 }}>
           {programs.map((p) => (
             <div key={p.name} style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 10, padding: '14px 16px', textAlign: 'center' }}>
@@ -127,7 +127,7 @@ export default function AboutTPPage() {
             )}
             <div style={{ flex: '1 1 280px' }}>
               <strong style={{ color: 'var(--main-color)', fontSize: 13, letterSpacing: '0.05em' }}>{p.name}</strong>
-              <h4 style={{ color: '#14213d', fontSize: 18, fontWeight: 850, margin: '4px 0 8px' }}>{p.full}</h4>
+              <h4 style={{ color: '#14213d', fontSize: 18, fontWeight: 600, margin: '4px 0 8px' }}>{p.full}</h4>
               <p style={{ margin: 0, color: 'var(--para-color)', fontSize: 14, fontWeight: 500, lineHeight: 1.8 }}>{p.desc}</p>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function AboutTPPage() {
 
       <div style={{ marginTop: 40, borderRadius: 14, border: '1px solid var(--border-color)', overflow: 'hidden', background: '#fff' }}>
         <div style={{ background: 'linear-gradient(135deg, #14213d 0%, #1f305a 100%)', color: '#fff', padding: '20px 24px' }}>
-          <h3 style={{ color: '#fff', fontSize: 18, fontWeight: 850, margin: 0 }}>Continuous Evaluation Center</h3>
+          <h3 style={{ color: '#fff', fontSize: 18, fontWeight: 600, margin: 0 }}>Continuous Evaluation Center</h3>
         </div>
         <div style={{ padding: 24 }}>
           <p style={{ margin: 0, color: 'var(--para-color)', fontSize: 15, fontWeight: 500, lineHeight: 1.8 }}>

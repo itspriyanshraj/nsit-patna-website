@@ -15,13 +15,13 @@ const tdStyle: React.CSSProperties = {
   padding: "12px 16px", borderBottom: "1px solid var(--border-color)",
   color: "var(--para-color)", fontSize: 14, fontWeight: 600
 };
-const tdLabel: React.CSSProperties = { ...tdStyle, color: "#14213d", fontWeight: 850 };
+const tdLabel: React.CSSProperties = { ...tdStyle, color: "#14213d", fontWeight: 600 };
 
 function DocTable({ title, items }: { title: string; items: [string, string][] }) {
   if (items.length === 0) return null;
   return (
     <div className={styles.tablePanel} style={{ marginTop: 24 }}>
-      <h3 style={{ color: "#14213d", fontSize: 18, fontWeight: 850, marginBottom: 14 }}>{title}</h3>
+      <h3 style={{ color: "#14213d", fontSize: 18, fontWeight: 600, marginBottom: 14 }}>{title}</h3>
       <table style={{ width: "100%", minWidth: 600, borderCollapse: "collapse" }}>
         <thead>
           <tr>

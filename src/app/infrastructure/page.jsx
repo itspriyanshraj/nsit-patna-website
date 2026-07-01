@@ -39,7 +39,7 @@ export default function InfrastructurePage() {
         {facilities.map(f => (
           <div key={f.title} style={{background: 'var(--white-color)', border: '1px solid var(--border-color)', borderRadius: 10, overflow: 'hidden', boxShadow: '0 16px 34px rgba(23,32,51,0.08)', transition: 'transform 220ms ease, box-shadow 220ms ease'}}>
             <div style={{height: 170, overflow: 'hidden', position: 'relative'}}>
-              <img src={f.img} alt={f.title} className="w-100 h-100" style={{objectFit: 'cover'}} />
+              <img loading="lazy" src={f.img} alt={f.title} className="w-100 h-100" style={{objectFit: 'cover'}} />
               <span style={{position: 'absolute', top: 12, left: 12, padding: '4px 12px', background: 'var(--main-color)', color: '#fff', fontSize: 11, fontWeight: 950, borderRadius: 4, letterSpacing: '0.04em', textTransform: 'uppercase'}}>{f.label}</span>
             </div>
             <div style={{padding: '18px 20px 22px'}}>

@@ -60,7 +60,7 @@
   padding: 0 14px;
   color: #14213d;
   font-size: 14px;
-  font-weight: 850;
+  font-weight: 600;
   background: #f7f9fc;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -199,7 +199,7 @@
   padding: 18px;
   color: #14213d;
   font-size: 17px;
-  font-weight: 850;
+  font-weight: 600;
   line-height: 1.7;
   background: #fff5f6;
   border-left: 4px solid var(--main-color);
@@ -297,7 +297,7 @@
 
 .tablePanel td {
   color: #14213d;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .tablePanel a {

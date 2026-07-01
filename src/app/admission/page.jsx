@@ -1,4 +1,5 @@
 import { SectionShell } from "../components/SectionShell";
+import { HiCog, HiWrench, HiComputerDesktop, HiChartBarSquare } from "react-icons/hi2";
 
 const admissionLinks = [
   ["Why Choose NSIT?", "/admission/why-choose"],
@@ -10,10 +11,10 @@ const admissionLinks = [
 ];
 
 const programs = [
-  { title: "B.Tech", subtitle: "Computer Science & Engineering, Civil, EEE, ECE, Mechanical, Applied Science", icon: "⚙", color: "var(--main-color)" },
-  { title: "Diploma", subtitle: "Civil Engineering, Electrical & Electronics Engineering, Mechanical Engineering", icon: "🔧", color: "#e67e22" },
-  { title: "BCA", subtitle: "Bachelor of Computer Applications — 3 Years", icon: "💻", color: "#2ecc71" },
-  { title: "BBA", subtitle: "Bachelor of Business Administration — 3 Years", icon: "📊", color: "#3498db" },
+  { title: "B.Tech", subtitle: "Computer Science & Engineering, Civil, EEE, ECE, Mechanical, Applied Science", icon: <HiCog />, color: "var(--main-color)" },
+  { title: "Diploma", subtitle: "Civil Engineering, Electrical & Electronics Engineering, Mechanical Engineering", icon: <HiWrench />, color: "#e67e22" },
+  { title: "BCA", subtitle: "Bachelor of Computer Applications — 3 Years", icon: <HiComputerDesktop />, color: "#2ecc71" },
+  { title: "BBA", subtitle: "Bachelor of Business Administration — 3 Years", icon: <HiChartBarSquare />, color: "#3498db" },
 ];
 
 export const metadata = {
@@ -51,7 +52,7 @@ export default function Page() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: 22, marginBottom: 14, color: p.color,
             }}>{p.icon}</div>
-            <h3 style={{ margin: 0, fontSize: 20, fontWeight: 850, color: '#14213d' }}>{p.title}</h3>
+            <h3 style={{ margin: 0, fontSize: 20, fontWeight: 600, color: '#14213d' }}>{p.title}</h3>
             <p style={{ margin: '8px 0 0', fontSize: 14, color: 'var(--para-color)', fontWeight: 600, lineHeight: 1.6 }}>{p.subtitle}</p>
           </div>
         ))}
@@ -66,9 +67,9 @@ export default function Page() {
         <p style={{ margin: '10px 0 0', color: 'var(--para-color)', fontSize: 15, fontWeight: 600, lineHeight: 1.8 }}>
           For detailed information, explore the{" "}
           <a href="/admission/prospectus" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Prospectus</a>,
-          {" "}<a href="/admission/fee-structure" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Fee Structure</a>,{" "}
-          <a href="/admission/eligibility" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Eligibility Criteria</a>,{" "}
-          and take a{" "}<a href="/admission/virtual-tour" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Virtual Tour</a>.
+          {" "}<a href="/feestructure" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Fee Structure</a>,{" "}
+          <a href="/eligibilitycriteria" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Eligibility Criteria</a>,{" "}
+          and take a{" "}<a href="/tour" style={{ color: 'var(--main-color)', fontWeight: 950, textDecoration: 'underline' }}>Virtual Tour</a>.
         </p>
       </div>
     </SectionShell>

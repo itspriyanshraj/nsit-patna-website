@@ -18,25 +18,23 @@ const routes = [
 export default function TransportPage() {
   return (
     <SectionShell section="Infrastructure" activePath="/infrastructure/transport" title="Transport" links={infrastructureLinks}>
-      <div className={styles.heading}>
-        <span>Infrastructure</span>
-        <h2>Campus Transport</h2>
-      </div>
-
-      <div className={styles.panel}>
-        <div className={styles.splitAlt}>
-          <div className={styles.splitMedia}>
-            <img src="https://www.nsit.in/Content/assets/c_images/nsit_images/nsitransport.jpg" alt="NSIT Bus" />
+      <div className={styles.infoCard}>
+        <div className={styles.infoCardHeader}>
+          <div className={styles.infoCardIcon}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
-          <div className={styles.panelBody}>
-            <p>
-              The college has its own fleet of buses to cater to the transportation needs of its students, staff members and visiting guests. These buses serve as the link between the campus and the city. The college provides transport facility to the faculties, students and support staffs from the city to the college campus and back in working days and special occasions.
-            </p>
-          </div>
+          <h3 className={styles.infoCardTitle}>Campus Transport</h3>
         </div>
+        <p className={styles.infoCardText}>
+          The college has its own fleet of buses to cater to the transportation needs of its students, staff members and visiting guests. These buses serve as the link between the campus and the city. The college provides transport facility to the faculties, students and support staffs from the city to the college campus and back in working days and special occasions.
+        </p>
+        <img loading="lazy" src="https://www.nsit.in/Content/assets/c_images/nsit_images/nsitransport.jpg" alt="NSIT Bus" className={styles.infoCardImage} />
       </div>
 
-      <div className={styles.routeTable}>
+      <div className={styles.sectionLabel}>Routes</div>
+      <h3 className={styles.sectionHeading} style={{ margin: "4px 0 0" }}>Bus Routes</h3>
+
+      <div className={styles.tableCard}>
         <table>
           <thead>
             <tr>

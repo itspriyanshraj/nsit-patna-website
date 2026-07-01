@@ -3,21 +3,21 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 const isExternal = (href) => href.startsWith("http");
-import { FaFilePdf } from "react-icons/fa";
+import { HiDocumentArrowDown } from "react-icons/hi2";
 import Breadcrumbs from "../components/Breadcrumbs";
 import styles from "./academicsPages.module.css";
 
 const academicsLinks = [
   ["Courses", "/academics/courses" ],
   ["Syllabus", "/academics/syllabus"],
-  ["Examination", "/academics/examination"],
-  ["Academic Calendar", "/academics/academic-calender"],
-  ["Course Outcomes", "/academics/course-outcomes"],
-  ["Activity Reports", "/academics/activity-reports"],
+  ["Examination", "/examination"],
+  ["Academic Calendar", "/academic_calender"],
+  ["Course Outcomes", "/courseoutcomes"],
+  ["Activity Reports", "/activity-reports"],
   ["Student's Counsellor", "/academics/students-counsellor"],
-  ["NAAC", "/academics/naac"],
-  ["DVV", "/academics/dvv"],
-  ["AQAR", "/academics/aqar"],
+  ["NAAC", "/naac"],
+  ["DVV", "/dvv"],
+  ["AQAR", "/aqar"],
 ];
 
 export function AcademicsShell({ activePath, title, children }) {
@@ -86,14 +86,14 @@ export function DocumentGrid({ documents, columns = 3 }) {
           whileHover={{ y: -6 }}
         >
           <span className={styles.docBadge}>
-            <FaFilePdf />
+            <HiDocumentArrowDown />
             <i>PDF</i>
           </span>
           <span className={styles.docBody}>
             <strong>{label}</strong>
             <small>
               <span className={styles.downloadIcon}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
               </span>
               Download PDF
             </small>

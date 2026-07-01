@@ -3,31 +3,31 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
-  FaArrowRight,
-  FaBookOpen,
-  FaBuildingColumns,
-  FaCalendarDays,
-  FaChartLine,
-  FaCheck,
-  FaComputer,
-  FaEnvelope,
-  FaFileLines,
-  FaGlobe,
-  FaLink,
-  FaLocationDot,
-  FaPhone,
-  FaQuoteLeft,
-  FaStar,
-  FaTelegram,
-  FaUser,
-  FaUsers,
-  FaVideo,
-} from "react-icons/fa6";
+  HiArrowRight,
+  HiBookOpen,
+  HiBuildingLibrary,
+  HiCalendarDays,
+  HiChartBarSquare,
+  HiCheck,
+  HiComputerDesktop,
+  HiEnvelope,
+  HiDocumentText,
+  HiGlobeAlt,
+  HiLink,
+  HiMapPin,
+  HiPhone,
+  HiChatBubbleLeft,
+  HiStar,
+  HiPaperAirplane,
+  HiUser,
+  HiUsers,
+  HiVideoCamera,
+} from "react-icons/hi2";
 import styles from "./page.module.css";
 
 const slides = [
   {
-    image: "/bann1.jpg",
+    image: "/bann1.png",
     eyebrow: "Welcome To NSIT",
     title: "Netaji Subhas Institute of Technology, Patna",
     text: "Approved by AICTE, New Delhi and recognized by Department of Science & Technology, Government of Bihar.",
@@ -78,22 +78,22 @@ const successCards = [
   {
     title: "Fundamentals",
     text: "College fundamentals are essential for academic success and personal growth.",
-    icon: <FaBookOpen />,
+    icon: <HiBookOpen />,
   },
   {
     title: "Skill",
     text: "Critical thinking, communication, research and adaptability help students move with confidence.",
-    icon: <FaStar />,
+    icon: <HiStar />,
   },
   {
     title: "Best Projects",
     text: "Projects showcase student creativity, problem-solving and academic excellence.",
-    icon: <FaComputer />,
+    icon: <HiComputerDesktop />,
   },
   {
     title: "Top Placements",
     text: "Top placements highlight competence, preparation and promising career outcomes.",
-    icon: <FaChartLine />,
+    icon: <HiChartBarSquare />,
   },
 ];
 
@@ -172,42 +172,42 @@ const telegramLinks = [
   {
     title: "TELEGRAM Link for B.Tech 1st Year 2023 session students",
     text: "Click here to subscribe",
-    icon: <FaTelegram />,
+    icon: <HiPaperAirplane />,
     badge: "New",
   },
   {
     title: "TRAINING/INTERNSHIP LETTER REQUEST FORM",
     text: "Click here to subscribe",
-    icon: <FaFileLines />,
+    icon: <HiDocumentText />,
     badge: "New",
   },
   {
     title: "NSIT EXAMS NEWS",
     text: "Click here to join our examination telegram channel for all exam related updates.",
-    icon: <FaTelegram />,
+    icon: <HiPaperAirplane />,
   },
   {
     title: "NSIT TRAINING & PLACEMENTS NEWS",
     text: "Click here to subscribe to our telegram channel for latest news regarding training programs and placement drives",
-    icon: <FaTelegram />,
+    icon: <HiPaperAirplane />,
   },
   {
     title: "NSIT CAMPUS Virtual Tour",
     text: "",
-    icon: <FaVideo />,
+    icon: <HiVideoCamera />,
     href: "/admission/virtual-tour",
   },
   {
     title: "Student's Login",
     text: "",
-    icon: <FaUser />,
+    icon: <HiUser />,
     action: true,
     href: "https://student.nsit.in/login.aspx",
   },
   {
     title: "Teacher's Login",
     text: "",
-    icon: <FaBuildingColumns />,
+    icon: <HiBuildingLibrary />,
     action: true,
     outline: true,
     href: "/teacher-login",
@@ -225,7 +225,7 @@ const approvals = [
 
 const approvalSlides = [...approvals, ...approvals];
 
-export default function HomeContent() {
+export default function HomeContent({ initialData }: { initialData?: any } = {}) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeCourse, setActiveCourse] = useState(0);
 
@@ -260,12 +260,12 @@ export default function HomeContent() {
             <h1 className={styles.heroH1}>{slides[activeSlide].title}</h1>
             <p className={styles.heroCopyP}>{slides[activeSlide].text}</p>
             <div className={`d-flex flex-wrap gap-2 ${styles.heroActions}`}>
-              <a href="/contact" className={`${styles.primaryBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
+              <a href="/contact-us" className={`${styles.primaryBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
                 Apply For Admisson
-                <FaArrowRight aria-hidden="true" />
+                <HiArrowRight aria-hidden="true" />
               </a>
               <a href="tel:7781020349" className={`${styles.secondaryBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
-                <FaPhone aria-hidden="true" />
+                <HiPhone aria-hidden="true" />
                 Contact us
               </a>
             </div>
@@ -303,7 +303,7 @@ export default function HomeContent() {
         <div className={styles.infoHub}>
           <section className={styles.infoColumn} aria-labelledby="useful-links-title">
             <div className={styles.infoRowTitle}>
-              <span className={styles.infoRowTitleIcon}><FaLink aria-hidden="true" /></span>
+              <span className={styles.infoRowTitleIcon}><HiLink aria-hidden="true" /></span>
               <div>
                 <h3 id="useful-links-title">Useful Links</h3>
               </div>
@@ -311,7 +311,7 @@ export default function HomeContent() {
             <div className={styles.linkStack}>
               {usefulLinks.map((link) => (
                 <a href={link.href} className={styles.resourceCard} key={link.label}>
-                  <FaGlobe aria-hidden="true" />
+                  <HiGlobeAlt aria-hidden="true" />
                   <span>{link.label}</span>
                 </a>
               ))}
@@ -320,7 +320,7 @@ export default function HomeContent() {
 
           <section className={styles.infoColumn} aria-labelledby="news-title">
             <div className={styles.infoRowTitle}>
-              <span className={styles.infoRowTitleIcon}><FaBookOpen aria-hidden="true" /></span>
+              <span className={styles.infoRowTitleIcon}><HiBookOpen aria-hidden="true" /></span>
               <div>
                 <h3 id="news-title">News & Notice Board</h3>
               </div>
@@ -329,7 +329,7 @@ export default function HomeContent() {
               {notices.map((notice, index) => (
                 <article className={styles.newsCard} key={`${notice.date}-${index}`}>
                   <strong className="d-inline-flex align-items-center gap-2 text-uppercase fw-bolder" style={{ color: "#98a2b3", fontSize: 13, marginTop: 15 }}>
-                    <FaCalendarDays aria-hidden="true" style={{ color: "var(--main-color)" }} />
+                    <HiCalendarDays aria-hidden="true" style={{ color: "var(--main-color)" }} />
                     {notice.date}
                   </strong>
                   <p className={styles.newsCardP}>{notice.text}</p>
@@ -340,7 +340,7 @@ export default function HomeContent() {
 
           <section className={styles.infoColumn} aria-labelledby="telegram-title">
             <div className={styles.infoRowTitle}>
-              <span className={styles.infoRowTitleIcon}><FaUsers aria-hidden="true" /></span>
+              <span className={styles.infoRowTitleIcon}><HiUsers aria-hidden="true" /></span>
               <div>
                 <h3 id="telegram-title">Telegram & Access Links</h3>
               </div>
@@ -348,7 +348,7 @@ export default function HomeContent() {
             <div className={styles.telegramGrid}>
                 {telegramLinks.map((link) => (
                 <a
-                  href={link.href || "/contact"}
+                  href={link.href || "/contact-us"}
                   className={`${styles.telegramCard} ${link.action ? styles.telegramAction : ""} ${link.outline ? styles.telegramOutline : ""}`}
                   key={link.title}
                 >
@@ -385,7 +385,7 @@ export default function HomeContent() {
               <div className={styles.featureList}>
                 {features.map((item) => (
                   <span key={item} className="d-flex align-items-start gap-2 fw-bolder" style={{ color: "#14213d", lineHeight: 1.5 }}>
-                    <FaCheck aria-hidden="true" style={{ flex: "0 0 auto", marginTop: 4, color: "#ed1c24" }} />
+                    <HiCheck aria-hidden="true" style={{ flex: "0 0 auto", marginTop: 4, color: "#ed1c24" }} />
                     {item}
                   </span>
                 ))}
@@ -394,9 +394,9 @@ export default function HomeContent() {
           </div>
 
           <div className="text-center mt-4">
-            <a href="/institution/about-us" className="d-inline-flex align-items-center justify-content-center gap-2" style={{ padding: "12px 32px", background: "var(--main-color)", color: "var(--white-color)", borderRadius: 8, fontWeight: 600, textDecoration: "none", transition: "all 180ms ease", boxShadow: "0 4px 14px rgba(237, 28, 36, 0.3)" }}>
+            <a href="/about-us" className="d-inline-flex align-items-center justify-content-center gap-2" style={{ padding: "12px 32px", background: "var(--main-color)", color: "var(--white-color)", borderRadius: 8, fontWeight: 600, textDecoration: "none", transition: "all 180ms ease", boxShadow: "0 4px 14px rgba(237, 28, 36, 0.3)" }}>
               Learn More About NSIT
-              <FaArrowRight aria-hidden="true" style={{ fontSize: 16 }} />
+              <HiArrowRight aria-hidden="true" style={{ fontSize: 16 }} />
             </a>
           </div>
         </div>
@@ -427,7 +427,7 @@ export default function HomeContent() {
                   {placementSlides.map((item, index) => (
                     <article className={styles.placementLogoCard} key={`${item.company}-${index}`}>
                       <div className={styles.placementLogoBox}>
-                        <Image src={item.logo} alt={`${item.company} logo`} width={180} height={90} loading="eager" />
+                        <Image src={item.logo} alt={`${item.company} logo`} width={180} height={90} loading="lazy" />
                       </div>
                       <strong className="d-block" style={{ color: "#14213d", fontSize: 14, lineHeight: 1.35, marginTop: 14 }}>Package : {item.package}</strong>
                       <span className="d-block fw-bolder" style={{ color: "#667085", marginTop: 8 }}>Total Selection : {item.selected}</span>
@@ -468,7 +468,7 @@ export default function HomeContent() {
             <div className={styles.recruiterTrack}>
               {recruiterSlides.map((item, index) => (
                 <article className={styles.recruiterCard} key={`${item.name}-${index}`}>
-                  <Image src={item.logo} alt={`${item.name} logo`} width={210} height={105} loading="eager" />
+                  <Image src={item.logo} alt={`${item.name} logo`} width={210} height={105} loading="lazy" />
                 </article>
               ))}
             </div>
@@ -488,15 +488,20 @@ export default function HomeContent() {
                 <article className={styles.testimonialCard} key={`${item.name}-${index}`}>
                   <div className="d-flex align-items-center justify-content-between gap-3">
                     <h3 className={styles.testimonialTopH3}>{item.name}</h3>
-                    <Image src="/placement/google.png" alt="Google logo" width={56} height={56} className="flex-shrink-0" style={{ objectFit: "contain" }} loading="eager" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width={28} height={28} className="flex-shrink-0">
+                      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+                      <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+                      <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+                      <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+                    </svg>
                   </div>
                   <p className={styles.testimonialCardP}>
-                    <FaQuoteLeft aria-hidden="true" style={{ marginRight: 10, color: "#ed1c24", fontSize: 17 }} />
+                    <HiChatBubbleLeft aria-hidden="true" style={{ marginRight: 10, color: "#ed1c24", fontSize: 17 }} />
                     {item.text} <a href="/placement" className="fw-bolder" style={{ color: "#ed1c24" }}>Read more</a>
                   </p>
                   <div className="d-flex gap-2" style={{ color: "#ffa400", marginTop: 28 }} aria-label="5 star rating">
                     {Array.from({ length: 5 }).map((_, starIndex) => (
-                      <FaStar aria-hidden="true" key={starIndex} />
+                      <HiStar aria-hidden="true" key={starIndex} />
                     ))}
                   </div>
                 </article>
@@ -517,7 +522,7 @@ export default function HomeContent() {
               <div className={styles.approvalTrack}>
                 {approvalSlides.map((item, index) => (
                   <article className={styles.approvalCard} key={`${item.label}-${index}`}>
-                    <Image src={item.src} alt={`${item.label} logo`} width={72} height={72} loading="eager" />
+                    <Image src={item.src} alt={`${item.label} logo`} width={72} height={72} loading="lazy" />
                     <strong className="d-block fw-bolder" style={{ color: "#14213d", marginTop: 10 }}>{item.label}</strong>
                   </article>
                 ))}
@@ -538,23 +543,23 @@ export default function HomeContent() {
             </p>
           </div>
           <div className={`d-flex flex-wrap gap-2 ${styles.visitActions}`}>
-            <a href="/contact" className={`${styles.primaryBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
-              <FaEnvelope aria-hidden="true" />
+            <a href="/contact-us" className={`${styles.primaryBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
+              <HiEnvelope aria-hidden="true" />
               Contact Helpdesk
             </a>
             <a href="tel:9102403265" className={`${styles.darkBtn} d-inline-flex align-items-center justify-content-center gap-2`}>
-              <FaPhone aria-hidden="true" />
+              <HiPhone aria-hidden="true" />
               9102403265
             </a>
           </div>
 
           <div className={`${styles.visitMeta} d-flex flex-wrap`} style={{ gap: "12px 22px" }}>
             <span className="d-inline-flex align-items-center gap-2 fw-bolder" style={{ color: "#14213d" }}>
-              <FaLocationDot aria-hidden="true" style={{ color: "#ed1c24" }} />
+              <HiMapPin aria-hidden="true" style={{ color: "#ed1c24" }} />
               Netaji Subhas Institute Of Technology, Amhara, Bihta, Patna - 801118
             </span>
             <span className="d-inline-flex align-items-center gap-2 fw-bolder" style={{ color: "#14213d" }}>
-              <FaUsers aria-hidden="true" style={{ color: "#ed1c24" }} />
+              <HiUsers aria-hidden="true" style={{ color: "#ed1c24" }} />
               info@nsit.in | tpo@nsit.in
             </span>
           </div>

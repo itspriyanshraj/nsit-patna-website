@@ -6,7 +6,7 @@ import { useState } from "react";
 import type { ComponentType, SVGProps } from "react";
 import { usePathname } from "next/navigation";
 import { navItems } from "../navData";
-import { FaHouse, FaPhone, FaBars, FaXmark, FaBuildingColumns, FaBuilding } from "react-icons/fa6";
+import { HiHome, HiPhone, HiBars3, HiXMark, HiBuildingLibrary, HiBuildingOffice2 } from "react-icons/hi2";
 
 type NavIcon = ComponentType<SVGProps<SVGSVGElement>>;
 type NavTreeItem = {
@@ -18,11 +18,11 @@ type MainItem = { label: string; icon: NavIcon; href: string };
 type MenuBtn = { label: string; icon: NavIcon; isMenu: true };
 
 const mainItems: (MainItem | MenuBtn)[] = [
-  { label: "Home", icon: FaHouse, href: "/" },
-  { label: "About", icon: FaBuildingColumns, href: "/institution/about-us" },
-  { label: "Menu", icon: FaBars, isMenu: true },
-  { label: "Placement", icon: FaBuilding, href: "/placement" },
-  { label: "Contact", icon: FaPhone, href: "/contact" },
+  { label: "Home", icon: HiHome, href: "/" },
+  { label: "About", icon: HiBuildingLibrary, href: "/institution/about-us" },
+  { label: "Menu", icon: HiBars3, isMenu: true },
+  { label: "Placement", icon: HiBuildingOffice2, href: "/placement" },
+  { label: "Contact", icon: HiPhone, href: "/contact" },
 ];
 
 function TreeItem({ item, depth = 0, onClose }: { item: NavTreeItem; depth?: number; onClose: () => void }) {
@@ -75,7 +75,7 @@ export default function BottomNav() {
                 className={`bottomnav-item menu-btn ${menuOpen ? "active" : ""}`}
                 onClick={() => setMenuOpen(!menuOpen)}
               >
-                {menuOpen ? <FaXmark /> : <item.icon />}
+                {menuOpen ? <HiXMark /> : <item.icon />}
                 <span>{item.label}</span>
               </button>
             );
@@ -95,7 +95,7 @@ export default function BottomNav() {
           <div className="menu-panel" onClick={(e) => e.stopPropagation()}>
             <div className="menu-header">
               <Image src="/images/logo-opt-v3.png" alt="NSIT" width={110} height={110} />
-              <button className="menu-close" onClick={() => setMenuOpen(false)}><FaXmark /></button>
+                <button className="menu-close" onClick={() => setMenuOpen(false)}><HiXMark /></button>
             </div>
             <div className="menu-tree">
               {(navItems as NavTreeItem[]).map((item, i) => (
@@ -206,12 +206,12 @@ export default function BottomNav() {
         .tree-link {
           display: flex; align-items: center;
           padding: 14px 16px; text-decoration: none; color: #14213d;
-          font-size: 15px; font-weight: 850; gap: 6px;
+          font-size: 15px; font-weight: 600; gap: 6px;
         }
         .tree-link:hover { background: #ed1c24; color: #fff; }
         .tree-label {
           display: block; padding: 14px 16px;
-          color: #14213d; font-size: 15px; font-weight: 850;
+          color: #14213d; font-size: 15px; font-weight: 600;
         }
         .tree-arrow { font-size: 15px; color: #8899aa; flex-shrink: 0; display: inline-grid; place-items: center; width: 12px; height: 16px; transition: transform 180ms ease; }
         .tree-arrow.open { transform: rotate(180deg); }
@@ -226,7 +226,7 @@ export default function BottomNav() {
         .enquiry-btn {
           display: flex; align-items: center; justify-content: center; gap: 8px;
           margin: 24px 16px 0; padding: 14px 20px;
-          color: #fff; font-size: 15px; font-weight: 850;
+          color: #fff; font-size: 15px; font-weight: 600;
           background: #ed1c24; border: 1px solid #ed1c24; border-radius: 8px;
           text-decoration: none;
           box-shadow: 0 12px 22px rgba(237, 28, 36, 0.2);

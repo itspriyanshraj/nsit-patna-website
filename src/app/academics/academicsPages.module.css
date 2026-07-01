@@ -60,7 +60,7 @@
   padding: 0 14px;
   color: #14213d;
   font-size: 14px;
-  font-weight: 850;
+  font-weight: 600;
   background: #f7f9fc;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -200,7 +200,7 @@
   overflow: hidden;
   color: #14213d;
   font-size: 16px;
-  font-weight: 850;
+  font-weight: 600;
   line-height: 1.4;
 }
 
@@ -274,7 +274,7 @@
 
 .tablePanel td {
   color: #14213d;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .tablePanel a {
@@ -469,7 +469,7 @@
 
 .monthLabel {
   font-size: 11px;
-  font-weight: 850;
+  font-weight: 600;
   color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -651,7 +651,7 @@
   display: block;
   color: #14213d;
   font-size: 14px;
-  font-weight: 850;
+  font-weight: 600;
   line-height: 1.3;
 }
 
@@ -689,7 +689,7 @@
 
 .archiveHead span {
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   opacity: 0.7;
 }
 
@@ -732,7 +732,7 @@
 .archiveLabel {
   flex: 1;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 600;
   color: #14213d;
   min-width: 0;
   overflow: hidden;

@@ -80,7 +80,7 @@ export default function CourseOutcomesContent() {
             }}>
               {b.code}
             </div>
-            <h3 style={{ margin: 0, fontSize: 15, fontWeight: 850, color: "var(--heading-color)", lineHeight: 1.3 }}>
+            <h3 style={{ margin: 0, fontSize: 15, fontWeight: 600, color: "var(--heading-color)", lineHeight: 1.3 }}>
               B.Tech - {b.name}
             </h3>
             <p style={{ margin: "8px 0 0", fontSize: 13, color: "var(--para-color)", fontWeight: 600 }}>

@@ -1,83 +1,47 @@
+import FeedbackForm, { departments, academicYears, ratings } from "../../components/FeedbackForm";
+
 export const metadata = {
-  title: "Alumni Feedback | NSIT Patna",
+  title: "Alumni Feedback",
 };
 
-const inputStyle = {
-  width: '100%', minHeight: 48, padding: '0 16px',
-  border: '1px solid #ddd', borderRadius: 8,
-  font: 'inherit', fontSize: 14, fontWeight: 500,
-  color: '#333', background: '#fff', boxSizing: 'border-box',
-};
+const employmentStatus = [
+  { label: "Government Employed", color: "#22c55e", bg: "#f0fdf4", icon: "🏛️" },
+  { label: "Private Sector", color: "#14b8a6", bg: "#f0fdfa", icon: "💼" },
+  { label: "Self-employed", color: "#3b82f6", bg: "#eff6ff", icon: "🚀" },
+  { label: "Unemployed", color: "#f59e0b", bg: "#fffbeb", icon: "📋" },
+  { label: "Pursuing higher Education", color: "#8b5cf6", bg: "#f5f3ff", icon: "🎓" },
+  { label: "Undergoing Training", color: "#ec4899", bg: "#fdf2f8", icon: "📚" },
+];
 
-const labelStyle = {
-  fontSize: 13, fontWeight: 950, color: '#14213d',
-  marginBottom: 6, display: 'block',
-};
+const fields = [
+  { label: "Student Name", name: "Student Name", required: true },
+  { label: "Register Number", name: "Register Number", required: true },
+  { type: "select", label: "Department", name: "Department", options: departments, required: true },
+  { label: "Year of Graduation", name: "Year of Graduation", required: true },
+  { label: "Current Address", name: "Current Address", required: true },
+  { type: "row", items: [
+    { label: "Contact Number", name: "Contact Number", required: true, col: "col-md-6" },
+    { label: "Email Id", name: "Email Id", type: "email", required: true, col: "col-md-6" },
+  ]},
+  { label: "Name and address of the company where you employed", name: "Company Details", required: true },
+  { label: "Name and contact address of the employer (Your intimated Head)", name: "Employer Details", required: true },
+];
+
+const questions = [
+  { text: "Curriculum meets prerequisite and basic knowledge required for the career.", options: employmentStatus },
+  { text: "Usefulness of learning experience in career." },
+  { text: "Electives offered in relation to the technological advancements." },
+  { text: "The new course (subjects) introduced meet contemporary (existing) requirements." },
+  { text: "Design of the courses (subjects) encourages/motivates extra learning or self learning." },
+  { text: "How do you rate the competencies/outcomes in relation to the course contents." },
+];
 
 export default function AlumniFeedbackPage() {
   return (
-    <main>
-      <section style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(135deg, rgba(247,32,57,0.08), transparent 42%), linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%)', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ position: 'relative', zIndex: 1, width: 'min(1320px, calc(100% - 48px))', margin: '0 auto', padding: '42px 0 48px' }}>
-          <h1 className="mb-2" style={{ maxWidth: 900, margin: '14px 0 0', color: '#071225', fontSize: 'clamp(38px, 5vw, 64px)', lineHeight: 1.02 }}>Alumni Feedback</h1>
-        </div>
-      </section>
-
-      <section style={{ width: 'min(800px, calc(100% - 48px))', margin: '0 auto', padding: '76px 0 92px' }}>
-        <a href="/feedback" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: 'var(--main-color)', fontSize: 13, fontWeight: 950, textTransform: 'uppercase', letterSpacing: '0.05em', textDecoration: 'none', marginBottom: 24 }}>
-          <span style={{ fontSize: 16 }}>←</span> Back to Feedback Types
-        </a>
-        <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 12, padding: 'clamp(28px,3.5vw,44px)', boxShadow: '0 18px 42px rgba(23,32,51,0.08)' }}>
-          <div style={{marginBottom:28}}>
-            <span style={{color:'var(--main-color)', fontSize:12, fontWeight:950, letterSpacing:'0.08em', textTransform:'uppercase'}}>Share Your Thoughts</span>
-            <h2 style={{margin:'6px 0 0', color:'#14213d', fontSize:'clamp(22px,2.8vw,32px)'}}>Alumni Feedback Form</h2>
-            <p style={{margin:'10px 0 0', color:'#888', fontSize:14, fontWeight:500, lineHeight:1.6}}>
-              We value your opinion. Share your thoughts, suggestions, or concerns with us.
-            </p>
-          </div>
-
-          <form action="mailto:info@nsit.in" method="post" encType="text/plain" style={{ display: 'grid', gap: 18 }}>
-            <input type="hidden" name="Feedback Type" value="Alumni" />
-            <div className="row" style={{ gap: 18 }}>
-              <div className="col-md-6" style={{ padding: 0 }}>
-                <label style={labelStyle} htmlFor="name">Name</label>
-                <input type="text" id="name" name="Name" style={inputStyle} placeholder="Your full name" required />
-              </div>
-              <div className="col-md-6" style={{ padding: 0 }}>
-                <label style={labelStyle} htmlFor="email">Email</label>
-                <input type="email" id="email" name="Email" style={inputStyle} placeholder="your@email.com" required />
-              </div>
-            </div>
-            <div className="row" style={{ gap: 18 }}>
-              <div className="col-md-6" style={{ padding: 0 }}>
-                <label style={labelStyle} htmlFor="phone">Phone</label>
-                <input type="tel" id="phone" name="Phone" style={inputStyle} placeholder="Your phone number" />
-              </div>
-              <div className="col-md-6" style={{ padding: 0 }}>
-                <label style={labelStyle} htmlFor="batch">Batch</label>
-                <input type="text" id="batch" name="Batch" style={inputStyle} placeholder="e.g. 2020" />
-              </div>
-            </div>
-            <div>
-              <label style={labelStyle} htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="Subject" style={inputStyle} placeholder="Subject of your feedback" />
-            </div>
-            <div>
-              <label style={labelStyle} htmlFor="message">Message</label>
-              <textarea id="message" name="Message" style={{ ...inputStyle, padding: '12px 16px', resize: 'vertical', minHeight: 130 }} placeholder="Write your feedback here..." required />
-            </div>
-            <div style={{ marginTop: 6 }}>
-              <button type="submit" style={{
-                background: 'var(--main-color)', color: '#fff',
-                padding: '14px 44px', fontWeight: 950, border: 0,
-                borderRadius: 8, fontSize: 14,
-                boxShadow: '0 10px 24px rgba(247,32,57,0.22)',
-                cursor: 'pointer',
-              }}>Submit Feedback</button>
-            </div>
-          </form>
-        </div>
-      </section>
-    </main>
+    <FeedbackForm
+      title="Alumni Feedback"
+      fields={fields}
+      questions={questions}
+    />
   );
 }

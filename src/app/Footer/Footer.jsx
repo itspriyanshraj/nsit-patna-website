@@ -1,15 +1,16 @@
 ﻿import Image from "next/image";
+import { HiEnvelope } from "react-icons/hi2";
 import styles from "./Footer.module.css";
 
 const quickLinks = [
   ["Gallery", "/infrastructure/gallery"],
-  ["Contact", "/contact"],
+  ["Contact", "/contact-us"],
   ["Anti Ragging", "/academics/students-counsellor"],
-  ["NSIT Virtual Tour", "/admission/virtual-tour"],
-  ["AICTE", "/institution/approval"],
-  ["AKU", "/institution/approval"],
-  ["Dept. Of Sc. & Tech.", "/institution/approval"],
-  ["SBTE", "/institution/approval"],
+  ["NSIT Virtual Tour", "/tour"],
+  ["AICTE", "/approval/aicte_approval"],
+  ["AKU", "/approval/aicte_approval"],
+  ["Dept. Of Sc. & Tech.", "/approval/aicte_approval"],
+  ["SBTE", "/approval/aicte_approval"],
 ];
 
 const contacts = [
@@ -28,11 +29,11 @@ export default function Footer() {
       <div className={`${styles.footerInner} mx-auto`}>
         <section className={`${styles.ctaPanel} position-relative z-2 d-flex align-items-center justify-content-between flex-wrap gap-4 p-4`}>
           <div>
-            <span className="d-block mb-1 text-uppercase" style={{ color: "var(--main-color)", fontSize: 12, fontWeight: 800 }}>Admissions & Campus Support</span>
+            <span className="d-block mb-1 text-uppercase" style={{ color: "var(--main-color)", fontSize: 12, fontWeight: 600 }}>Admissions & Campus Support</span>
             <h2 className={`${styles.ctaPanelH2} text-white`}>Start your NSIT journey with the right information.</h2>
           </div>
           <a href="/enquiry" className="d-inline-flex align-items-center justify-content-center gap-2 text-white fw-bolder text-nowrap" style={{ minHeight: 50, padding: "0 16px 0 7px", background: "var(--main-color)", border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, boxShadow: "0 16px 30px rgba(237,28,36,0.24)" }}>
-            <span style={{ width: 32, height: 32, display: "grid", placeItems: "center", color: "var(--main-color)", background: "var(--white-color)", borderRadius: 7 }}>✉</span>
+            <span style={{ width: 32, height: 32, display: "grid", placeItems: "center", color: "var(--main-color)", background: "var(--white-color)", borderRadius: 7 }}><HiEnvelope /></span>
             Send Enquiry
             <span style={{ transition: "transform 180ms ease" }}>→</span>
           </a>

@@ -1,4 +1,5 @@
 import { SectionShell } from "../../components/SectionShell";
+import { HiMapPin, HiPaperAirplane } from "react-icons/hi2";
 
 const admissionLinks = [
   ["Why Choose NSIT?", "/admission/why-choose"],
@@ -10,18 +11,18 @@ const admissionLinks = [
 ];
 
 const galleryPhotos = [
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imageb4931853ca2d4f04a5af0196f7f9a1f7o20hhqd7xp6q7b8gc3rki.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image7ab0f072b86543279c57ea633856ae14rob6vaj71hcfe6lf9jyl.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imageabb0a5ef25884b188ba8bf2adf0dc937vyxvsp1yg39jui61murql.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imagea889205b2a964bc89f9eb1b5422fa6b6jupbys0p4k9riqanlycin.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image61e31e95650740298ea328c296e71f47aqfj3ry139kalnc5tvtkn.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imageb1295408afcf47a7bbda60e0cb7cc141bakry4ynr2r4jjlh0cwayi.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imageb75d91a6117c49ff9f9aa7d79e8fa3830u9lrcism6ddyr0cwuu5c4.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Imageb1c4859394634bbb95c620f76403eb2fo0ezfy06w5c83fhjm4lbmx.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image1ec242503a0045dd99ac191c6e7a5142hapfn6sgqqcbcyt2y4c5an.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image785167c00e504f25922f9b920b3b50406jvu7qjj69h97amugwg1n6.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image998d1174a2da4f548b114cf0457c5afd5a1m9570xpfecan6ydpou.jpg",
-  "https://cdn.academist.app/Cloud/cdnclg/8/Website/Gallery/Image57b0fb3decdc42108194efd2264c138bo5rw5z1fakplgnstslbgnf.jpg",
+  "/gallery/virtual-tour/vt1-clean.jpg",
+  "/gallery/virtual-tour/vt2-clean.jpg",
+  "/gallery/virtual-tour/vt3-clean.jpg",
+  "/gallery/virtual-tour/vt4-clean.jpg",
+  "/gallery/virtual-tour/vt5-clean.jpg",
+  "/gallery/virtual-tour/vt6-clean.jpg",
+  "/gallery/virtual-tour/vt7-clean.jpg",
+  "/gallery/virtual-tour/vt8-clean.jpg",
+  "/gallery/virtual-tour/vt9-clean.jpg",
+  "/gallery/virtual-tour/vt10-clean.jpg",
+  "/gallery/virtual-tour/vt11-clean.jpg",
+  "/gallery/virtual-tour/vt12-clean.jpg",
 ];
 
 export const metadata = {
@@ -73,7 +74,7 @@ export default function Page() {
           flex: '1 1 260px', background: 'var(--white-color)', border: '1px solid var(--border-color)',
           borderRadius: 12, padding: 26, boxShadow: '0 10px 24px rgba(23,32,51,0.06)',
         }}>
-          <h3 style={{ margin: 0, color: '#14213d', fontSize: 18, fontWeight: 850 }}>Plan Your Visit</h3>
+          <h3 style={{ margin: 0, color: '#14213d', fontSize: 18, fontWeight: 600 }}>Plan Your Visit</h3>
           <p style={{ margin: '10px 0 0', color: 'var(--para-color)', fontSize: 14, fontWeight: 600, lineHeight: 1.7 }}>
             NSIT is located at Amhara, Bihta, Patna — approximately 25 km from Patna city centre
             and 2 km from Bihta railway station. The campus is spread across 11 acres with a built-up
@@ -81,17 +82,17 @@ export default function Page() {
           </p>
           <div style={{ marginTop: 14, display: 'flex', flexDirection: 'column', gap: 6 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 600, color: 'var(--para-color)' }}>
-              <span style={{ fontSize: 16 }}>🚂</span> Bihta Railway Station: 2 km
+              <HiMapPin style={{ fontSize: 16, color: 'var(--main-color)' }} /> Bihta Railway Station: 2 km
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, fontWeight: 600, color: 'var(--para-color)' }}>
-              <span style={{ fontSize: 16 }}>✈️</span> Patna Airport: ~30 km
+              <HiPaperAirplane style={{ fontSize: 16, color: 'var(--main-color)' }} /> Patna Airport: ~30 km
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <h3 style={{ color: '#14213d', fontSize: 20, fontWeight: 850, margin: '0 0 4px' }}>Campus Gallery</h3>
+        <h3 style={{ color: '#14213d', fontSize: 20, fontWeight: 600, margin: '0 0 4px' }}>Campus Gallery</h3>
         <p style={{ color: 'var(--para-color)', fontSize: 14, fontWeight: 500, margin: '0 0 18px' }}>
           Glimpses of our campus infrastructure and facilities
         </p>

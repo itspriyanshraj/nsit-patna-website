@@ -3,16 +3,16 @@ import Breadcrumbs from "../components/Breadcrumbs";
 import styles from "./institutionPages.module.css";
 
 const institutionLinks = [
-  ["About Us", "/institution/about-us"],
-  ["Message", "/institution/message"],
-  ["Vision & Mission", "/institution/vision-mission"],
+  ["About Us", "/about-us"],
+  ["Message", "/seceretary-desk"],
+  ["Vision & Mission", "/vision-mission"],
   ["Statutory Committees", "/institution/statutory-committees"],
   ["IQAC", "/institution/iqac"],
-  ["Approval", "/institution/approval"],
+  ["Approval", "/approval/aicte_approval"],
   ["NSIT Clubs", "/institution/nsit-clubs"],
   ["AICTE Mandatory Disclosure", "/institution/aicte-mandatory-disclosure"],
   ["Governing Body", "/institution/governing-body"],
-  ["Online Students Grievance Redressal", "/institution/online-students-grivance-redressal"],
+  ["Online Students Grievance Redressal", "/onlinesgrs"],
 ];
 
 export const whyNsit =
