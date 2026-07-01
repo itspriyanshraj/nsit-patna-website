@@ -14,9 +14,9 @@ export default function PopupModal() {
 
   useEffect(() => {
     if (HIDDEN_ROUTES.includes(pathname)) return;
-    const shown = localStorage.getItem("popupShown");
+    const shown = sessionStorage.getItem("popupShown");
     if (shown) return;
-    localStorage.setItem("popupShown", "true");
+    sessionStorage.setItem("popupShown", "true");
     const timer = setTimeout(() => setVisible(true), 500);
     return () => clearTimeout(timer);
   }, [pathname]);
